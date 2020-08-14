@@ -1,0 +1,144 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath} 
+\usepackage{amssymb} 
+\usepackage{geometry} 
+\usepackage{fancyhdr} 
+\usepackage{bm} 
+%allowdisplaybreak
+\begin{document}
+\title{CH 5 Multivariate Probability Distribution}
+\author{mrevanisworking}
+\maketitle
+
+\subsection{Intro}
+    multivariate probability distributions useful when need to 
+    check for the intersections of two or more events.
+\subsection{Bivariate and Multivariate Probability Distributions}
+    think multiple dice
+    \subsubsection{Definition of Joint or Bivariate Probability Fxn}
+        Let Y1 and Y2 be DRV. The joint probability fxn (JPF, BPF) for
+        Y1 and Y2:
+        \begin{align*}
+            p(y_{1}, y_{2}) = P(Y_{1} = y_{1},  Y_2 = y_2),
+            -\infty < y_1 < \infty ,-\infty < y_2 <\infty
+        \end{align*}
+    \subsubsection{Properties of JPF}
+        If Y1 and Y2 are DRV w/ JPF $ p(y_1, y_2) $
+        1. $ p(y_1, y_2) \ge 0 $ for all y1, y2\\
+        2. $ \sum_{y_1, y_2}p(y_1, y_2) = 1 $ where the sum is over all values
+        $ (y_1, y_2) $ that are assigned NZ P\\
+        Sometimes called the Joint probability mass fxn because it 
+        sepcifies P (mass) associated w/ each of the possible pairs of values
+        for RV. 
+    \subsubsection{Definition of Joint Distribution Fxn}
+        Joint CDF\\
+        For any RV Y1, Y2 the joint (bivariate) distribution function is
+        $ F(y_1, y_2) = P(Y_1 \le y_1, Y_2 \le y_2) $,
+        $ -\infty < y_1 < inf, -\infty < y_2 < \infty  $
+    \subsubsection{Definition of Join PDF}
+        Let Y1 and Y2 be CRV w/ JCDF $ F(y_1, y_2) $. If there exists a
+        nonnegative fxn $ f(y_1, y_2) $such that
+        \begin{align*}
+            F(y_1, y_2) = \int_{-\infty }^{y_1}\int_{-\infty }^{y_2}
+            f(t_1, t_2)dt_2dt_{1}
+        \end{align*}
+        for all $ -\infty < y_{1} < \infty , -\infty < y_{2} < \infty  $,
+            then Y1 and Y2 are said to be Jointly CRV. The fxn $ f(y_1, y_2) $
+            is the joint PDF.
+    \subsubsection{Properties of JCDF Theorem}
+        If Y1 and Y2 are RV w/ JCDF $ F(y_{1}, y_{2}) $, then:
+        1.$ F(-\infty ,-\infty ) = F(-\infty , y_2) = F(y_{1}, -\infty )= 0$\\
+        2.$ F(\infty , \infty )= 1 $\\
+        3. If $ y_{1}* \ge y_{1} $ and $ y_{2}* \ge y_2 $, then
+        \begin{align*}
+            F(y_{1}^*, y_2^*)-F(y_{1}^*, y_2)-F(y_1, y_2^*) + F(y_1, y_2) \ge 0
+        \end{align*}
+    \subsubsection{Properties of JPDF Theorem}
+        If Y1 and Y2 are JCRV w/ JPDF $ f(y_1, y_2) $, then
+        1.$ f(y_1, y_2) \ge 0$ for all y1, y2\\
+        2.$ \int_{-\infty }^{\infty }\int_{-\infty }^{\infty }
+        f(y_1, y_2)dy_1dy_2 = 1 $ \\
+        SEE FIG 5.2 on 252
+\subsection{Marginal an Conditional PD}
+	distinct values assumed by DRV represent ME $ E_i $. same for bivariate
+	\subsubsection{Definition of Marginal P Fxn and MPDF}
+		a. Let Y1 and Y2 be jointly DRV w/ PF:$ p(y_1, y_2) $. Then the
+		marginal probability functions of Y1 and Y2 are:
+		\begin{align*}
+			p_1(y_1) = \sum_{\text{ all } y_2}p(y_1, y_2) \text{ and }
+			p_2(y_2) = \sum_{\text{ all }}^{ y_2 }p(y_1, y_2)
+		\end{align*}
+		b. Let Y1 and Y2 be joinly CRV w/ join density function $ f(y_1, y_2) $.
+		Then the margina density function (MPDF):
+		\begin{align*}
+			f_1(y_1) = \int_{-\infty }^{\infty }f(y_1, y_2)dy_2 \text{ and }
+			f_2(y_2) = \int_{-\infty }^{\infty }f(y_1, y_2)dy_1
+		\end{align*}
+		Marginal: the probabilities on the $ y_1 $ axis (margin).
+	\subsubsection{Conditional Discrete P Fxn}
+		If Y1 and Y2 are Joinly DRV w/ joint P Fxn $ p(y_1, y_2) $
+		and the MDF $ p_1(y_1), p_2(y_2) $, then the conditional discrete
+		P fxn of Y1 given Y2 is
+		\begin{align*}
+			p(y_1| y_2) = P(Y_1 = y_1 | Y_2 = y_2) = 
+			\frac{P(Y_1 = y_1 | Y_2 = y_2)}{P(Y_2 = y_2)} = 
+			\frac{p(y_1, y_2)}{p_2(y_2)} 
+		\end{align*}
+		provided that $ p_2(y_2) $ (undefined if p2y2 is 0)
+	\subsubsection{Definition of Joint CRV Conditional CDF}
+		IF Y1 and Y2 are jointly CRV w/ JPDF $ f(y_1, y_2) $
+		then the CCDF of Y! give $ Y_2 = y_2 $ is
+		\begin{align*}
+			F(y_1 | y_2) = P(Y_1 \le y_1|Y_2 = y_2)
+		\end{align*}
+	\subsubsection{Definition of Conditional Density}
+		Let Y1 and Y2 be JCRV w/ JPDF and marginal densities $ f_1(y_1),
+		f_2(y_2) $. For any $ y_2 $such that $ f_2(y_2) > 0 $, the conditional
+		density of Y1 given $ Y_2 = 2 $
+		\begin{align*}
+			f(y_1 | y_2) = \frac{f(y_1, y_2)}{f_2(y_2)} 
+		\end{align*}
+		and for any $ y_1 $ such that $ f_1(y_1) > 0 $, the conditional density
+		of $ Y_2 $ given $ Y_1 = y_1 $
+		\begin{align*}
+			f(y_2|y_1) =  \frac{f(y_1, y_2)}{f_1(y_1)} 
+		\end{align*}
+		undefined when the bottom is zero
+\subsection{Independent Random Variables}
+	\subsubsection{Definition of Independent RV}
+		Let Y1 have a CDF $ F_1(y_1), Y_2 $have a CDF $ F_2(y_2) $
+		and Y1 and Y2 have a JCDF $ F(y_1, y_2) $. Then Y1 and Y2 are
+		independent IFF
+		\begin{align*}
+			F(y_1, y_2) = F_1(y_1)F_2(y_2)
+		\end{align*}
+		for every pair of real num $ (y_1, y_2) $
+			If Y1 and Y2 are not independent, they are dependent
+	\subsubsection{Marginal Independence Theorem}
+		If Y1 and Y2 are DRV w/ JPDF $ p(y_1, y_2) $ and the MPDF
+		$ p_1(y_1), p_2(y_2) $, then Y1 and Y2 are independent IFF
+		\begin{align*}
+			p(y_1, y_2) = p_1(y_1)p_2(y_2)
+		\end{align*}
+		for all pairs of real num $ (y_1, y_2) $\\
+		If Y1 and Y2 are CRV w/ JPDF $ p(y_1, y_2) $ and the MPDF
+		$ f_1(y_1), f_2(y_2) $, then Y1 and Y2 are independent IFF
+		\begin{align*}
+			f(y_1, y_2) = f_1(y_1)f_2(y_2)
+		\end{align*}
+		for all pairs of real numbers $ y_1, y_2 $
+	\subsubsection{JPDF Fxns Independent Theorem}
+		Let Y1 and Y2 be a JPDF $ f(y_1, y_2) $ that is positive IFF
+		$ a\le y_1\le b, c\le y_2\le d $, for abcd; and$ f(y_1, y_2)= 0 $
+		otherwise. Then Y1 and Y2 are IRV IFF
+		\begin{align*}
+			f(y_1, y_2) = ;g(y_1)h(y_2)
+		\end{align*}
+		where $ g(y_1) $ is a NN fxn of $ y_1 $ alone and $ h(y_2) $
+		is a NN fxn of $ y_2 $ alone\\
+		Key benefit of this theorem: do not need to derive the 
+		marginal densities
+
+
+
+\end{document}

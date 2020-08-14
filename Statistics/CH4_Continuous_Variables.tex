@@ -1,0 +1,307 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath} 
+\usepackage{amssymb} 
+\usepackage{geometry} 
+\usepackage{fancyhdr} 
+\usepackage{bm} 
+%allowdisplaybreak
+\begin{document}
+\title{CH 4 Continuous Variables and Their Probability Distributions}
+\author{mrevanisworking}
+\maketitle
+
+\subsection{Intro}
+    Continuous Random Variable: a RV that can take on any value in an
+    interval.
+\subsection{The Probability Distribution for a CRV}
+    \subsubsection{Definition of CDF (distribution function)}
+        let Y denote any RV. The DF of Y denoted by $ F(y) $, is such that
+        $ F(y) = P(Y\le y) $ for $ -\infty < y < \infty $\\
+        CDF for DRV are always step functions because the CDF increases
+        only at the finite or countable num of points w/ positive probabilities
+    \subsubsection{Properties of a Distribution Function(CDF)}
+        If $ F(y) $ is a DF, then\\
+        1. $ F(-\infty ) = \lim_{y\to -\infty } F(y) = 0$\\
+        2. $ F( \infty  )= \lim_{y\to \infty }F(y) = 1 $\\
+        3. $ F(y) $ is a nondecreasing fxn of y. ($ y_{1} < y_{2}
+        ,F(y_{1}) < F(y_{2}) $
+    \subsubsection{Definition of a Continuous Random Varaible}
+        a RV Y w/ DF F(y) is said to be continuous if $ F(y) $ is continuous
+        for $ -\infty < y < \infty $
+    \subsubsection{Derivative of CDF is PDF}
+        let F(Y) be the DF for a CRV Y. Then $ f(y) $, given by
+        \begin{align*}
+            f(y) = \frac{dF(y)}{dy} = F'(y)
+        \end{align*}
+        whenever the derivative exists, is called the probability density
+        fxn for the RV Y.
+        \begin{align*}
+            F(y) = \int_{-\infty }^{y}f(t)dt
+        \end{align*}
+        where $ f(\cdot) $ is the PDF\\
+        PDF is a theoretical model 
+    \subsubsection{Properties of a Density Function (PDF)}
+        if f(y) is a PDF for a CRV then\\
+        1. $ f(y) \ge 0 $ for all $ y,-\infty < y < \infty  $\\
+        2.$ \int_{-\infty }^{ \infty  } f(y)dy = 1$\\
+        $ F(y_{0}) $ gives the P that $ Y \le y_{0} $, it's of interest
+        to determine $ y $ of RV Y such that $ P(Y \le y) \ge $ some 
+        value 
+    \subsubsection{Definition of Quantile, Percentile HELP}
+        Let Y denote any RV. If $ 0 < p < 1 $, the pth quantile of
+        Y denoted by$ \phi _{p} $ is the smallest val such that
+        $ P(Y \le \pi _{q}) = F(\pi _{p}) \ge p $. If Y is cont.,$ \pi _{p} $
+        is the smallest val such that $ F(\phi_{p})= P(Y \le \phi _{p})= p $\\
+        $ \phi _{p} $ is referred to the 100pth percentile of Y
+    \subsubsection{PDF Interval Theorem}
+        If the RV Y has a DF $ f(y) $ and$ a< b $ then the P that Y 
+        falls in the interval $ [a,b] $is 
+        \begin{align*}
+            P(a \le Y \le b) = \int_{a}^{b} f(y)dy
+        \end{align*}
+        NOT TRUE FOR DRV
+\subsection{Expected Values for CRV}
+    \subsubsection{Definition of EV of CRV}
+        EV of CRV Y is 
+        \begin{align*}
+            E(Y) =  \int_{-\infty }^{ \infty  }yf(y)dy
+        \end{align*}
+        exists if converges
+    \subsubsection{EV of Function of Y Theorem}
+        let g(Y) be a fxn of Y; then the EV of g(Y) is 
+        \begin{align*}
+            E[g(Y)] = \int_{-\infty }^{ \infty  }g(y)f(y)dy
+        \end{align*}
+    \subsubsection{EV of g(y) properties}
+        let g1tok(Y) be fxns of CRV Y:
+        1.$ E(c) = c $\\
+        2.$ E[cgY)]= cE[g(Y)] $\\
+        3.$ E[g1+tok(Y)] = E[g_{1}(Y)]+tok$\\
+        some bonuses:\\
+        $ g(Y) = (Y -\mu )^2  $\\
+        $ V(Y) = E(Y-\mu)^2  $ \\
+        $ V(Y) = E(Y^2 )-\mu ^2  $
+\subsection{The Uniform Probability Distribution}
+    \subsubsection{Definition of Uniform PD}
+        If $ \theta_{1} < \theta _{2} $ a RV Y is said to have a cont.
+        UPD on the interval $ (\theta _{1},\theta _{2}) $ IFF the density
+        fxn of Y is 
+        \begin{align*}
+            f(y) = 
+            \begin{cases}
+                \frac{1}{\theta _{2}-\theta _{1}}, & 
+                \theta _{1} \le y \le \theta _{2} \\
+                0, & \text{elsewhere}
+            \end{cases}
+        \end{align*}
+    \subsubsection{Parameters of Density Fxn}
+        the constants that determine form of a density fxn are called
+        parameters of the density fxn.
+    \subsubsection{Mean and Variance of UPD}
+        If $ \theta _{1}<\theta _{2} $ and Y is a RV uniformly distributed on
+        the interval $ \theta _{1}, \theta _{2} $, then
+        \begin{align*}
+            \mu = E(Y) = \frac{\theta _{1}+ \theta _{2}}{2} \text{ and } 
+            \sigma ^2  = V(Y) = \frac{(\theta _{2}-\theta _{1})^2 }{12} 
+        \end{align*}
+\subsection{The Normal Probability Distribution}
+    The most widely used cont PD is the normal distribution
+    \subsubsection{Definition of Normal Probability Distribution}
+        a RV Y is said to have a NPD IFF for $ \sigma >0 $ and
+        $ -\infty < \mu < \infty  $ the density fxn of Y is:
+        \begin{align*}
+            f(y) = \frac{1}{\sigma \sqrt{2\pi } }
+            e^{\frac{-(y-\mu)^2}{2\sigma ^2 }}
+        \end{align*}
+        for $ -\infty < y < \infty  $\\
+        area is the integral of this (which doesn't exist)
+    \subsubsection{Mean and Variance of NPD}
+        if Y is normally distributed RV w/ param $ \mu, \sigma  $ then
+        \begin{align*}
+            E(Y) = \mu \text{ and } V(Y) = \sigma ^2 
+        \end{align*}
+        NPDF is symmetric around mean
+    \subsubsection{Z and z score}
+        z is the distance from the mean of a normal distribution
+        expressed in units of standard deviation
+        \begin{align*}
+            z = \frac{y-\mu }{\sigma }
+        \end{align*}
+        Can transform a normal RV Y to a standard normal RV Z by using
+        \begin{align*}
+            Z = \frac{Y-\mu }{\sigma }
+        \end{align*}
+        SEE TABLE 4!!!
+\subsection{The Gamma Probability Distribution}
+    some PDF are skewed right where most values are near origin
+    \subsubsection{Definition of GPD}
+        a RV Y is said to have a gamma distribution w/ param
+        $ \alpha > 0 $ and $ \beta > 0 $ IFF the density fxn of Y is:
+        \begin{align*}
+            f(y) = 
+            \begin{cases}
+            \frac{y^{\alpha -1}e^{-\frac{y}{\beta }}}
+            {\beta ^{\alpha }\Gamma (\alpha )} &
+            0 \le y < \infty,\\
+            0,& \text{elsewhere,}
+            \end{cases}
+        \end{align*}
+        where the gamma function is
+        \begin{align*}
+            \Gamma (\alpha ) = \int_{0}^{\infty }y^{\alpha -1}e^{-y}dy
+        \end{align*}
+        $\alpha   $is called the shape parameter associated w/ a gamma
+        distribution.\\
+        $ \beta  $ is called the scale parameter\\
+        Special case: $ \alpha= 1 $ can be expressed as a sum of
+        certain Poisson probabilities
+    \subsubsection{Mean and Varaince of GPD HELP magic}
+        if Y has a gamma distribution w/ $ \alpha, \beta $ then
+        \begin{align*}
+            \mu = E(Y) = \alpha\beta \text{ and }
+            \sigma^2 = V(Y) = \alpha\beta^2 
+        \end{align*}
+    \subsubsection{Definition of chi-square distribution}
+        Let v be a +int. A RV Y is said to have a chi-square distribution
+        with v degrees of freedom IFF Y is a gamma distributed RV
+        w/ parameteres $ \alpha= \frac{v}{2} $,$ \beta= 2 $\\
+        A RV w/ chi-square distribution is a $ \chi^2  $ RV.
+    \subsubsection{Mean and Variance of chi-square distribution}
+        if Y is a $ \chi^2  $ RV w/ v DoF, then:
+        \begin{align*}
+            \mu = E(Y) = v \text{ and } \sigma^2 = V(Y) = 2v
+        \end{align*}
+        SEE TABLE 6\\
+        gamma density function in which $ \alpha= 1 $ si called the 
+        exponential density function
+    \subsubsection{Definition Exponential Distribution}
+        a RV Y is said to have an exponential distribution w/ parameter
+        $ \beta > 0 $ IFF the density fxn of Y is:
+        \begin{align*}
+            f(y) = 
+            \begin{cases}
+                \frac{1}{\beta}e^{-y /\beta},& 0 \le y < \infty \\
+                0, & \text{ elsewhere. }
+            \end{cases}
+        \end{align*}
+        useful for modeling length of life of electronic components
+    \subsubsection{Mean and Variance of Exponential Distribution}
+        If Y is an exponential RV w/ param $ \beta $ then:
+        \begin{align*}
+            \mu = E(Y) = \beta \text{ and } \sigma^2 = V(Y) = \beta^2 
+        \end{align*}
+        see example 4.10:\\
+        exponential distribution has a property called memoryless
+        property (geometric distribution also has)      
+\subsection{The Beta Probability Distribution}
+    the beta density fxn is a two param density fxn defined over
+    $ 0 \le y \le 1 $. Often used as a model for proportions
+    \subsubsection{Definition of Beta Probability Distribution}
+        a RV Y has a BPD w/ param $ \alpha > 0, \beta>0 $ IFF desnity fxn of Y:
+        \begin{align*}
+            f(y) =
+            \begin{cases}
+                \frac{y^{\alpha-1}(1-y)^{\beta-1}}{B(\alpha, \beta)}.&
+                0 \le y \le 1 \\
+                0, & \text{elsewhere,}
+            \end{cases}
+        \end{align*}
+        where the beta function is
+        \begin{align*}
+            B(\alpha, \beta) = \int_{0}^{1}y^{\alpha-1}(1-y)^{\beta-1}dy
+            =\frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+ \beta)} 
+        \end{align*}
+        if $ c \le  y \le d $, then $ y* =\frac{y-c}{d-c} $ defines
+        a new var such that $ 0 \le y* \le 1 $, thus BDF can be 
+        applied to a RV defined on int $ c\le y\le d $
+        by translation\\
+        CDF for beta RV is the incomplete beta function:
+        \begin{align*}
+            F(y) = \int_{0}^{y}\frac{t^{\alpha-1}(1-t)^{\beta-1}}
+            {B(\alpha, \beta)}dt =I_{y}(\alpha, \beta)
+        \end{align*}
+        see Tables of the Incomplete Beta Function\\
+        related to binomial function: when integration by parts
+        \begin{align*}
+            F(y) = \sum_{i=\alpha}^{n}\begin{pmatrix}
+            n\\i
+            \end{pmatrix}y^{i}(1-y)^{n-i}
+        \end{align*}
+        where $ n=\alpha+\beta-1 $
+    \subsubsection{Mean and Varaince of Beta Probability Distribution}
+        if Y is a beta-distributed RV w/ param $ \alpha>0,\beta $
+        \begin{align*}
+            \mu = E(Y) = \frac{\alpha}{\alpha + \beta} \text{ and }
+            \sigma^2 = V(Y) = 
+            \frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)} 
+        \end{align*}
+\subsection{General Comments}
+    a good model is one that yields good inferences about the population of
+    interest. Selecting a reasonable models is a matter of acting on 
+    theoretical considerations. EX: Poisson RV is appropriate when the 
+    it is characterised by random behavior of events in time.\\
+    Another way to form model is from a frequency histogram and choose a
+    density fxn similar to the frequency curve.\\
+    Can also calculate goodness of fit.\\
+    see Weibull distribution
+\subsection{Other Expected Values}
+    Moments for CRV have definitions analogous to DRV
+    \subsubsection{Definition Moments CRV}
+        If Y is a CRV, then the kth moment about the origin is:
+        \begin{align*}
+            \mu'_{k} = E(Y^{k})
+        \end{align*}
+        k1toinf.\\ 
+        The kth moment about the mean, or the kth central moment:
+        \begin{align*}
+            \mu_{k} = E[(Y-\mu)^{k}],
+        \end{align*}
+        k1toinf
+    \subsubsection{Definition of Moment Generationg Function CRV}
+        if Y is CRV, then the MGF of Y is:
+        \begin{align*}
+            m(t) = E(e^{tY})
+        \end{align*}
+        MGF exists if there exists a constant $ b>0 $such that$ m(t) $is
+        finite for $ |t|\le b $\\
+        binomial expansion can be used to solve
+    \subsubsection{MGF for g(Y)}
+        let Y be a RV with density fxn f(y) and g(Y) be a fxn
+        of Y. then MGF for g(Y)
+        \begin{align*}
+            E[e^{tg(Y)}] = \int_{-\infty }^{\infty }e^{tg(y)}f(y)dy
+        \end{align*}
+\subsection{Tchebysheff's Theorem CRV}
+    \subsubsection{Theorem}
+        let Y be a RC w/ finite mean $ \mu $ and variance $ \sigma^2 $
+        then for any $ k>0 $
+        \begin{align*}
+            P(|Y-\mu|<k\sigma) \ge 1 - \frac{1}{k^2} \text{ or }
+            P(|Y-\mu|\le k\sigma) \le \frac{1}{k^2}
+        \end{align*}
+        Allows to find bounds for P easier \\
+        Can find mean and variances of RV without knowledge of distribution
+\subsection{Expectations of DiscontFxn and Mixed PD (HELP R2)}
+    a RV t that has some P at discrete points and the remainder 
+    spread over intervals is a mixed distribution. EX: insurance
+    \subsubsection{Definition of a Mixed Distribution Function}
+        \begin{align*}
+            F(y) = c_{1}F_{1}(y) + c_{2}F_{2}(y)
+        \end{align*}
+        where F1 is a step distribution fxn and F2 is a 
+        continuous distribution fxn\\
+        suppose that $ X_{1} $ is a DRV w/ dist fxn $ F_{1}(y) $\\
+        suppose that $ X_{2} $ is a CRV w/ dist fxn $ F_{2}(y) $\\
+        let $ g(Y) $ denote a fxn of :
+        \begin{align*}
+            E[g(Y)] =c_{1}E[g(X_{1})] + c_{2}E[g(X_{2})]
+        \end{align*}
+\subsection{Summary}
+    PDF, CDF, Normal, Exponential, Gamma, $ \chi^2 $, Beta\\
+    Moments,MGF, Tchebysheff\\
+    IMPORTANT:\\
+    first moment is mean\\
+    second moment is variance\\
+    third moment is skewness(about mean)\\
+    fourth moment about mean is kurtosis
+\end{document}

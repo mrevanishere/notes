@@ -1,0 +1,139 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+%\usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{bm}
+
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+%\allowdisplaybreak
+\begin{document}
+\title{CH 7 Symmetric Matricies and Quadratic Forms}
+\author{mrevanisworking}
+\maketitle
+
+\subsection{Diagonalization of Symmetric Matricies}
+    Symmetric MX: a MX that $A^T = A$ (is square)
+    maybe: row i = col i?
+    \subsubsection{Orthogonal Evec Symmetry Theorem}
+        if A is symmetric, then any two Evec from different
+        ES are orthogonal.
+    \subsubsection{Orthogonally Diagonalizable Theorem}
+        a nxn is orthogonally diagonalizable if there are
+        an orthogonal P ($P^{-1}= P^T$ ) and d such that:
+        \begin{align*}
+            A= PDP^T = PDP^{-1}
+        \end{align*}
+        Theorem: nxn A is orthogonally diagonalizable IFF
+        A is a symmetric matrix.
+    \subsubsection{Spectral Theorem}
+        set of Evec of A is sometimes called the spectreum of A.\\
+        Theorem: a nxn symmetric A has:\\
+        a. A has n real Evec, counting multiplicities.\\
+        b. dim of ES for each EV $\lambda $  equals the multiplicity
+        of $\lambda $  as a root of the chara equation.\\
+        c. ES are mutually orthogonal: Evec corresponding to different
+        EV are orthogonal.\\
+        d. A is orthogonally diagonalizable.
+    \subsubsection{Spectral Decomposition}
+        \begin{align*}
+            A = \cdots + \lambda _{n}\bm{u_{n}}\bm{u_{n}^{T}}
+        \end{align*}
+        because it breaks up A into pieces determined by the 
+        spectrum of A.\\
+        $\bm{u_{j}}\bm{u_{j}}^T$  is a projection matrix:\\
+        for each x, the vector $()\bm{u_{j}}\bm{u_{j}}^T)\bm{x}$ is the
+        orthogonal projection of $\bm{x}$  onto subS spanned by $\bm{u_{j}}$  
+\subsection{Quadratic Forms}
+    a quadratic form on $\R^n$  is a fxn Q defined on  $\R^n$  whose
+    value at $\bm{x}$  is $\R^n$  can be computed by 
+    $ Q(\bm{x}) \bm{x}^TA\bm{x} where A is nxn symmetric. $ \\
+    That A is the MX of the quadratic form.\\
+    quadratic forms are easier when no cross-product terms (when 
+    MX of quadratic form is diagonal)\\
+    cross-product term can be eliminated with change of variables
+    \subsubsection{Change of Variable in a Quadratic Form}
+        if $\bm{x}$  is a variable vec in rn, then change of variable
+        is an equation of the form:
+        \begin{align*}
+            \bm{x} = P\bm{y}\,\,\,\text{or}
+            \,\,\, \bm{y}= P^{-1}\bm{x}
+        \end{align*}
+        CHANGE OF VARIABLES (not change of coordinates)\\
+        *read 404 and check Theorem 2\\
+        SEE FIG1
+    \subsubsection{The Principal Axes Theorem}
+        A is nxn symmetric, then there is an orthogonal change of
+        variable $\bm{x}= P\bm{y}$  that transforms the
+        quadratic form $\bm{x}^TA\bm{x}$  into a quadratic form
+        $  \bm{y}^TD\bm{y} $  with no cross-product term ($x_1x_2$ ) \\
+        col of P in the theorem are the principle axes of xTAx.\\
+        y is the coordinate vec of x relative to the orthonormal basis
+        of $\R^n$ given by these principle axes 
+    \subsubsection{Geometry of Pinciple Axes}
+        if $\bm{x}^TA\bm{x} = c$ where A is an invertible 2x2 symm, then
+        it is either an ellipse, hyperbola, intersecting lines, a point,
+        or no points.\\
+        If A is a DMX, then graph is in standard position.\\
+        nonDMX is rotated out of standard position.\\
+        The principle axes (determined by Evec of A) means finding
+        a new coord system wrt which the graph is in standard position.\\
+        SEE EX5
+    \subsubsection{Classifying Quadratic Forms}
+        quadratic form Q is:\\
+        a. positive definite if $Q(\bm{x}) > 0$ for all $\bm{x}\ne \bm{0}$ \\
+        b. negative definite if $Q(\bm{x}) < 0$ for all $\bm{x}\ne \bm{0}$ \\
+        c. indefinite if $Q(\bm{x})$  assumes both positive and negative vals \\
+        Q is positive semidefinite if $\ge 0$ \\
+        Q is negative semidefinite if $\le 0$  
+    \subsubsection{QF and EV Theorem}
+        let A be nxn symm. then QF $\bm{x}^TA\bm{x}$ is:\\
+        a. +def IFF EV of A are all positive\\
+        b. -def IFF EV of A are all negative \\
+        c. indefinite IFF A has both positive and negative EV\\
+        see diagram
+    \subsubsection{QF MX}
+        positive definite MX is a SMX for which the QF is +def \\
+        ...
+\subsection{Constrained Optimization}
+    the requirement that $\bm{x}$  is  a unit vector:\\
+    mag = 1, mag squared = 1, $\bm{x}^T\bm{x}= 1$ \\
+    See EX1 for min/max of Q 
+    \subsubsection{Optimization for SMX Theorem}
+        let A be SMX, m is min, M is max EV of A.\\
+        value of $\bm{x}^TA\bm{x}$  is M when x is a unit Evec 
+        u corresponding to M.\\
+        the value of $\bm{x}^TA\bm{x}$ is m when x is a unit Evec
+        corresponding to m.
+    \subsubsection{Maximum for SMX Theorem(SEE NEXT THEOREM)}
+        a,$\lambda $,$\bm{u}$  as in previous thm,
+        max val of $\bm{x}^TA\bm{x}$  is subject to:
+        \begin{align*}
+            \bm{x}^T\bm{x}= 1\,\,\,,\bm{x}^T\bm{u}_{1}= 0
+        \end{align*}
+        is the second greatest EV $\lambda _{2}$, and this max is attained
+        when $\bm{x}$  is an Evec $\bm{u_{2}}$  corresponding to $\lambda _{2}$ 
+    \subsubsection{General Maxmimum for SMX Theorem}
+        let A be symm nxn w/ orthogonal diagonalization $A= PDP^{-1}$ 
+        where the entries on the diag of D are arranged so that
+        each EV is less than the previous entry, where col of P are
+        corresponding unit Evec u. Then for $k= 2,\dots ,n$ , the
+        maximum value of $\bm{x}^TAx$  subject to:
+        \begin{align*}
+             \bm{x}^T\bm{x}= 1\,\,\,,\bm{x}^T\bm{u}_{1}= 0,\dots 
+             \,\,\,,\bm{x}^T\bm{u}_{k-1}= 0
+        \end{align*}
+        is the EV $\lambda _{k}$  and this max is at
+        $\bm{x}= \bm{u}_{k}$ 
+
+
+
+
+\subsection{APPLICATIONS to Image Processing and Stats}
+    later in STATS and round2   
+\end{document}

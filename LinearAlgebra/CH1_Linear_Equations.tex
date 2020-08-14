@@ -1,0 +1,328 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+%\usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage{geometry}
+
+
+\newcommand{\R}{\mathbb{R}}
+
+%\allowdisplaybreak
+\begin{document}
+\title{CH 1 Linear Equations}
+\author{mrevanisworking}
+\maketitle
+
+
+\subsection{Systems}
+INSIGHT: differential equations is just linear algebra with derivatives. \\
+Linear Equation (LE): $ a_{1}x_{1} + a_{2}x_{2} + \cdots + a_{n}x_{n} = b $ where a 
+    are the coefficients.
+    Linear System (LS): system of linear equations. \\
+    Solution set (SS): set of all possible \\
+    solutions of an LS. \\
+    Equivalent: two LS are equivalent if SS are the same.
+    LS: has no solution (inconsistent), one (consistent), 
+    or infinite (consistent).
+    Coefficient Matrix (CM): matrix of coefficients of LS
+    Augmented Matrix (AM): matrix of coefficients and constants
+    Size: ($ m \times n $ )
+    \subsubsection{Solving Methods}
+   1. Gaussian Elimination.  
+   \subsubsection{Elementary Row Operations}
+   1. (Replacement) (Pivot)Replace one row with sum of itself and a multiple  
+   of another row. \\
+   $ R_{1} - 3R_{2} \rightarrow R_{1} $ \\
+   2. (Interchange) (Swap) Interchange two rows. \\
+   $ R_{1} \leftrightarrow R_{2} $ \\
+   3. (Scaling) (Scale)multiply a row by a NZ constant. \\
+   $ R_{1} \rightarrow R_{2} $ \\
+   Row Equivalence (RE): if an MX is transformed by ERO because reversible.
+        If AM are RE then same SS
+    \subsubsection{Existence and Uniqueness}
+        1. Is system consistent?
+        2. Is there a unique solution?
+\subsection{Row Reduction, Echelon Forms}
+    Nonzero Row (NZR): row or column containing at least one
+    NZ entry. \\
+    Leading Entry (LE): leftmost NZ entry in a row. \\
+    Echelon Form (EF) has:\\
+        1. All NZR are above ZR \\
+        2. Each LE is in a col to the right of the LE of the row above it.\\
+        3. All entries in a col below LE are zero \\
+        Creates a triangular matrix. \\
+    Reduced Echelon Form (REF) also has: \\
+        4. The LE in each NZR is 1. \\
+        5. Each leading 1 is the only NZEntry in its col \\
+    Echelon Matrix (EFM, REFM) is a matrix in EF 
+    \subsubsection{Row Reduction}
+    Any NZM may be RR (by ERO).
+    \subsubsection{Uniqueness of the REF Theorem}
+        Each matrix is RE to one and only one REFM. \\
+        LE in any EF of MX is the same bc Uniqueness of REF. 
+    \subsubsection{Pivot Position}
+        PP is a location in MX that corresponds to a L1 in REF. \\
+        Pivot Column contains a pivot position. 
+    \subsubsection{Row Reduction Algorithm}
+        1. Leftmost NZCol is a PC. PP at top. \\
+        2. Select NZ entry in PC as P. Possibly swap rows for PP \\
+        3. Use replacement to create zeros below the Pivot \\
+        4. Repeat 1-3 on submatrix below top row. \\
+        5. with rightmost P, and working up and left, create zeros above P. 
+        If pivot is not 1, then scale. \\
+        Foward Phase (1-4). Backward Phase (5). Computers use partial pivoting instead.
+    \subsubsection{Solutions}
+    Variables in pivot columns are basic variables (BV). \\
+    Variables not in pivot columns are free variables (FV). \\
+    Consistent systems can have basic variables in terms of FV.
+    (These are parametric descriptions (PD of SS)) \\
+    These are general solutions (exactly the same as DE because 
+    it is just system of equations). \\
+    When a system has a FV in a PP then no parametrix description (inconsistent).
+    \subsubsection{Back-Substitution}
+        Computers use it... \\
+        A Flop is a float arithmetic operation
+    \subsubsection{Existence and Uniqueness Theorem}
+        LS is consistent IFF rightmost col of AM is not a PC,
+        meaning IFF EF of AM has no $ [0 \cdots 0 b] $. \\
+        Consistent has: \\
+            (i) a US (unique solution), w/ no FV. \\
+            (ii) infinite solutions, w/ at least 1 FV.
+    \subsubsection{RR to Solve LS}
+       1. AM \\
+       2. RRA -> EFM (if consistent then go next) \\
+       3. RR -> REFM \\
+       4. MX to SE \\
+       5. Parametric Description 
+\subsection{Vector Equations}
+    Vector (vec): Ordered list of numbers. \\
+    INSIGHT: think of vectors' components as scalars that scale the
+    basis vectors and the vector is the vector sum of those.
+    \subsubsection{Vectors in x$ \R ^2  $ }
+        Column vector (CVec): vec with 1 col \\
+        Two vec are equal if their entries are equal. \\
+        Sum is by adding entries. Scalar is by distribution 
+    \subsubsection{Parallelogram Rule for Addition}
+         $ \vec u + \vec v $  represents the forth vertex of a parallelogram created
+         by $ \vec u $  and $ \vec v $  (verticies are $ \vec 0,\vec u,\vec v $ ).
+    \subsubsection{Vectors in x$ \R^{n} $}
+        is collection of all ordered n-tuples of n real numbers. Written by
+        $ n \times 1 $ MX. \\
+        see algebraic properties of $ \R^{n} $. 
+    \subsubsection{Linear Combinations}
+       \begin{align*}
+           \vec y = c_{1}\vec v_{1} + \cdots + c_{p}\vec v_{p}
+       \end{align*} 
+       is a linear combination (LC) of $ \vec v_{1},\dots,\vec v_{p} $ with
+       weights $ c_{1},\dots,c_{p} $ 
+    \subsubsection{LC and MX}
+    a VE (vector equation)
+        \begin{align*}
+            x_{1}\vec a_{1} + x_{2}\vec a_{2} + \cdots + x_{n}\vec a_{n} = \vec b
+        \end{align*}
+        has the same SS as the AM
+        \begin{align*}
+            \begin{bmatrix}
+                \vec a_{1} & \vec a_{2} & \cdots \vec a_{n} & \vec b 
+            \end{bmatrix}
+        \end{align*}
+        $ \vec b $  can be generated by an LCof $ a_{1}... $  IFF
+        there exists a solution to the LS corresponding to the MX 
+    \subsubsection{Span}
+     If $ ...\vec v_p $  are in $ \R^{n} $  then the set of all LC of
+     $ ...\vec v_p $  is the $ \text{Span}\big<\vec v_{1},\dots,
+     \vec v_{p}\big> $. and is called the subset of $ \R^{n} $ spanned by 
+     $ \vec v_{1},\dots,\vec v_{p} $ \\
+        Span: collection of all vec as
+        \begin{align*}
+            c_{1}\vec \vec v_{1} + \dots + c_{p}\vec v_{p}
+        \end{align*}
+        Span: collection of all LC
+        \par
+        vec b is in Span if 
+        \begin{align*}
+             x_{1}\vec a_{1} + x_{2}\vec a_{2} + \cdots + x_{n}\vec a_{n} = \vec b
+        \end{align*}
+        has a solution.
+        Span contains all scalars of v. Think of it as a change in coordinates. 
+        \begin{verbatim}
+            https://www.youtube.com/
+            watch?v=k7RM-ot2NWY&feature=emb_logo
+        \end{verbatim}
+\subsection{The Matrix Equation $ A\vec x = \vec b $ }
+    DEF: If A is an $ m \times n $  MX with cols $ a_{1}... $, and
+    if $ \vec x $  is in $ \R_{n} $, then the product of A and $ \vec x $ 
+    is the LC of the cols of A using corresponding x as weights
+    \begin{align*}
+        A\vec x =  [\vec a_{n}][x_{n}] = x_{n}\vec a_{n}
+    \end{align*}
+    Defined only if A cols == x len
+    \subsubsection{Theorem}
+        \begin{align*}
+            A\vec x &= \vec b \\
+            +...x_{n}\vec a_{n} &= \vec b\\
+                                &= \big[...\vec a_{n}\big]
+        \end{align*}
+        All have the same solution set
+    \subsubsection{Existence}
+        $ A\vec x = \vec b $  IFF $ \vec b $  is an LC of A cols \\
+        Questions with: is b in Span a, is Ax=b consistent, and
+        is Ax=b consistent for all b
+    \subsubsection{CM Equivalence Theorem}
+        Either all statements are true or all are false. \\
+        a. For each $ \vec b \in \R^m $, $ A\vec x= \vec b $  has a solution \\
+        b. each $ \vec b \in \R^m $ is an LC of cols of A \\
+        c. cols of A span $ \R^{m} $  \\
+        d. A has a PP in every row 
+    \subsubsection{Computations of Ax}
+        \par{Row-Vector Rule for Ax}
+        1. if Ax is defined, then the ith entry in Ax is the dot product
+        of corresponding entries from row i of A and from x
+        2. repeat for each row
+        \par
+       Identity matrix is 1 on diagonals of CM
+    \subsubsection{Properties of Ax Theorem}
+    a. $ A(\vec u + \vec v) = A\vec u + A\vec v $ \\
+    b. $ A(c\vec u) = c(A\vec u)$ 
+\subsection{The Solution Sets of Linear Systems}
+    \subsubsection{Homogeneous Linear Systems (HLS) SEE EXAMPLES}
+            Homogeneous if $ A\vec x = \vec 0 $  and always has
+            at least one solution $ \vec x = \vec 0 $   \\
+            which is called the Trivial Solution (TS)
+            Important question is if a NTS exists.
+            FACT: the HE $ A\vec = \vec 0 $  has an NTS IFF the equation as
+            at least one FV. \\
+            ss of he can always be expressed as span 
+    \subsubsection{Parametric Vector Form}
+        Parametric Vector Equation/Form is explicit
+        \begin{align*}
+            \vec x = s\vec u + t\vec v (s,t, \in\R)
+        \end{align*}
+        The oirginal equation of a plane is an implicit description. \\
+        (Think implicit and explicit solutions of DE)
+    \subsubsection{Solutions of Nonhomogeneous Systems}
+        Do Ax=b and solve system, then \\
+        put in parametric form (this is the particular solution)
+        \par
+        Vector Addition here can be thought of TRANSLATION. Where adding p
+        to v moves v parallel to its previous position. translated by p
+        to v + p.
+        \par
+        SS of Ax=b is a line through p parallel to SS of Ax=0. \\
+        see Figure 5.
+    \subsubsection{SS for NHE, HE Theorem}
+        $ A\vec x = \vec b $  and $ \vec p $  is a solution. \\
+        Then SS of $ A\vec x = \vec b $ is the set of all vec as
+        $ \vec w = \vec p + \vec v_h $  where $ \vec v_h $  is
+        any solution of the HE $ A\vec x = \vec 0 $  \\
+        APPLIES WHEN $ A\vec x = \vec b $ has ast least one NZ solution  
+    \subsubsection{Summary, SS of Consistent System in PVF}
+        1. RR AM to REF \\\
+        2. Express basic vars in terms of FV \\
+        3. Write typical solution $ \vec x $  as vec depending on FV if any \\
+        4. Decompose $ \vec x $  into LC of vec using FV as param. 
+\subsection{Applications...}
+\subsection{Linear Independence}
+DEF: set $ v_{1},\dots,v_{p} \in\R^n is  $  linearly independent (LI) if the
+VE
+    \begin{align*}
+        x_{1}\vec v_{1} +x_{2}\vec v_{2} + \cdots+ x_{p}\vec v_{p} = \vec 0
+    \end{align*}
+    has only the trivial solution, and is linearly dependent (LD) if
+    there exist weights $ c_{1}... $  not all zero, such that
+    \begin{align*}
+        c_{1}\vec v_{1}+ c_{2}v_{2}+ \cdots+ c_{p}\vec p = \vec 0
+    \end{align*}
+    \subsubsection{LI of MC (MX cols)}
+        $ A\vec x= \vec 0 == ...x_{n}a_{n} = \vec 0 $ \\
+        So cols of A are LI IFF $ A\vec x= \vec 0 $ has only a trivial solution
+    \subsubsection{Sets of One or Two Vec}
+        set of one vec is LI IFF v is not $ \vec 0 $ \\
+        set of two vec is LD if one vec is a multiple of other 
+    \subsubsection{Characterization of LD Sets Theorem}
+    An indexed set $ S = \{\vec v_{1},...,\vec v_{p}\} $  of two or more
+    vec is LD IFF at least one vec in S is a LC of the others. \\
+    if S is LD and $ v_{1}\ne \vec 0 $  then some $ v_{j} $ with j>1
+    is a LC of the preceding vecs $ v_{1},...,\vec v_{j-1} $ 
+    \subsubsection{Vec > Entries LD Theorem}
+        If a set contains more vec than entries in each vec, then
+        the set is LD. (if p > n)
+    \subsubsection{Zero vector LD Theorem}
+        If a set S in $ \R^{n} $  contains the zero vec, then set is LD 
+\subsection{Intro to Linear Transformations}
+    We can think of a the ME $ A\vec x = \vec b $  equivalent to 
+    the VE notation, but we should think of the matrix notation as
+    a transformation of the vector $\vec x$  to $ A\vec x $ 
+    \subsubsection{Definition of a Transformation}
+        A transformation (or function, or mapping) $ T $  from 
+        $ \R^n $  to $ \R^m $ assigns each $ \vec x \in\R^n$ to a vec
+        $ T(\vec x)\in\R^n $. \\
+        The set  $\R^n$  is the domain of T, $\R^m$  is called the codomain of
+        T. The notation: $T: \R^n \rightarrow \R^m$  \\
+        means that the domain of $T is \R^n$  and the codomain is $\R^m$  \\
+        n is columns, m is rows \\
+        For $\vec x\in\R^n$, the vec $T(\vec x)\in\R^m$  is called 
+        the IMAGE of $\vec x$  (under the action of T) \\
+        Range: set of all images $T(\vec x)$ \\
+        SEE FIGURE 2 \\
+        VISUALS ARE VERY IMPORTANT FOR LIN ALG 
+    \subsubsection{Matrix Transformations HELP}
+        denote a matrix transformation by $ \vec x  \mapsto A\vec x$  
+    \subsubsection{Linear Transformations HELP }
+        DEF: a transformation (mapping) T is linear if: \\
+        (i) $ T(\vec u + \vec v) = T(\vec u) + T(\vec v)$ for all
+        $ \vec u,\vec v $  in domain of T \\
+        (ii) $ T(c\vec u) = cT(\vec u) $ for all scalars c and all 
+        $ \vec u $  in domain of T \\
+        So LT preserves operations of vec add and scalar mult therefore,\\
+        $ T(\vec 0) = \vec 0$ and \\
+        $ T(c_{1}\vec v_{1}+... c_{p}\vec v_{p}) = 
+        c_{1}T(\vec v_{1})+\cdots+ c_{p}T(\vec v_{p})$ \\
+        If a transformation satisfies the one above, must be linear. \\
+        The above is reffered to as superposition principle (same as DE)
+\subsection{The Matrix of a Linear Transformation}
+    T is completely determined by what it does to the 
+    cols of $ n \times n IMX $ \\
+    see Example 1
+    \subsubsection{Transformation Matrix Theorem}
+         $T: \R^n \rightarrow \R^m$ then there is a unique MX \\
+         such that 
+         \begin{align*}
+             T(\vec x) = A(\vec x) \text{for all} \vec x\in\R^n
+         \end{align*}
+         A is the $ m \times n $  MX whose jth column is the vec
+         $ T(\vec e_j) $, where $ \vec e_j $  is the  jth col of the IMX in
+         $ R^n $ 
+         \begin{align*}
+             A = 
+             \begin{bmatrix}
+                 A = T(\vec e_{1}&\cdots&T(\vec e_{n}))
+             \end{bmatrix}
+         \end{align*}
+        A is the standard matrix for the linear transformation T. \\
+        Matrix transformations focus on how it's implemented, \\
+        Linear Transformations focus on a property of mapping.
+    \subsubsection{Geometric Linear Transformations of $\R^2$ }
+    Unit Square transformations (SEE TABLES 1-4 and FIG2-3)
+    \subsubsection{Existence and Uniqueness}
+    DEF EXISTENCE: a mapping  $T: \R^n \rightarrow \R^m$ is said to be onto
+    $ \R^m $  if each $ \vec b $  in $\R^m$  is image of 
+    at least one $ \vec x \in \R^n $ \\
+    Meaning: $ T(\vec x) = \vec b $ , See FIG3 \\
+    DEF UNIQUENESS: a mapping  $T: \R^n \rightarrow \R^m$ is
+    one-to-one if each $\vec b \in \R^m$ is the image of at most one
+    $ \vec x \in \R^n $  \\
+    Meaning: The $ T(\vec x) = \vec b$ has either a unique solution or
+    none at all.
+    \subsubsection{1-1 IFF trivial solution Theorem}
+        $T: \R^n \rightarrow \R^m$, then T is 1-1 IFF the equation
+        $ T(\vec x) = \vec 0$ has only the trivial solution
+    \subsubsection{}
+        let T be an LT...\\
+        a. T maps $\R^n$ onto $\R^m$ IFF the cols of A span $ \R^m $  \\
+        b. T is 1-1 IFF the cols of A are LI 
+\subsection{Linear Models (APPLICAIONS...)}
+    ...    
+\end{document}

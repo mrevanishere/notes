@@ -1,0 +1,101 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+%\usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{bm}
+
+
+\newcommand{\R}{\mathbb{R}}
+
+%\allowdisplaybreak
+\begin{document}
+\title{CH 3 Determinants}
+\author{mrevanisworking}
+\maketitle
+
+\subsection{Introduction to Determinants}
+    \subsubsection{Recursive Def of Determinant}
+        for $n\ge 2$  the det of nxn is
+        \begin{align*}
+            \sum_{j= 1}^{n}(-1)^{1+ j} a_{1j}\text{det} A_{1j}
+        \end{align*}
+    \subsubsection{Fundamental Cofactor Expansion Theorem}
+        det of nxn can be computed by cofactor expansion across any row
+        or down any col.
+        \begin{align*}
+            \text{det} A &= \cdots+ a_{in}C_{in} \\
+            \text{det} A &= \cdots+ a_{nj}C_{nj} \\
+        \end{align*}
+        $(i, j)$-cofactor depends on position of $a_{ij}$  independent of 
+        sign of $a_{ij}$ \\
+        SEE EXAMPLE 2 \\
+        cofactor is just the subdeterminant in a 3x3 det (the coefficient
+        of i, j, k, etc)
+    \subsubsection{Diagonal Product Theorem}
+        if A is a TMX (triangular) then det A is the product of the
+        entries on the main diag of A
+\subsection{Properties of Determinants}
+    \subsubsection{Determinant Row Operations Theorem}
+        let A be square \\
+        a. if multiple of one row of A is added to another row to
+        produce a matrix B, then det B = det A \\
+        b. if two rows of A are swapped to produce B, then
+        det B = - det A (remember properties of cross product) \\
+        c. if one row A is multiplied by k to produce B, then
+        det B = k det A.\\
+        if A invertible, then
+        \begin{align*}
+            \det A = (-1)^{r} \cdot (\text{product of pivots in U})
+        \end{align*}
+        if A is not invertible then det A = 0 \\
+        THEOREM: A SMX (square mx) is invertible IFF det  $A= 0$  \\
+        det A = 0 when rows of A are linearly dependent \\
+        SEE INVERTIBLE MATRIX THEOREM 
+    \subsubsection{Column Operations}
+        CO have same affect of det as RO.
+    \subsubsection{Transpose Determinant Theorem}
+        if nxn MX then $\text{det} A^T = \text{det} A$ 
+    \subsubsection{Multiplicative Property of Determinants Theorem}
+        If A and B are nxn MX, then
+        \begin{align*}
+            \text{det} AB = (\text{det} A)(\text{det} B)
+        \end{align*}
+        *Think geometrically (two transforms)
+    \subsubsection{Linearity Property of Determinant}
+        det A is a linear function of a vector variable if the
+        rest of the col vecs are fixed. \\
+        SEE 175 
+\subsection{Cramer's Rule, Volume, and Linear Transformations}
+    \subsection{Cramer's Rule Theorem (Inefficient)}
+        Let A be invertible nxn MX. For any $\bm{b}\in\R^n$, the
+        unique solution $\bm{x}$  of $A\bm{x}= \bm{b}$  has the entries:
+        \begin{align*}
+            x_{i} = \frac{\text{det} A_{i}(\bm{b})}{\text{det} A},i= 1,2,...,n
+        \end{align*}
+    \subsubsection{Application in Engineering}
+        Cramer's Rule, LODE, Laplace Transforms
+    \subsubsection{Inverse A Formula}
+        Matrix of cofactors transposed is adjugate of A. (adjont) \\
+        Inverse Formula for A an invertible nxn:
+        \begin{align*}
+            A^{-1} = \frac{1}{\text{det} A}\text{adj}A
+        \end{align*}
+    \subsection{Det as Area or Volume}
+        area parallelogram determined by cols of A is det A \\
+        volume of parallelepiped determeined by cols of A is det A\\
+        See 3brown1blue. \\
+        EQUAL: $ \bm{a_{1}},\bm{a_{2}}\ne 0 $  then for any c
+        the area deteremined by a1,a2 is determined by 
+        a1 and $\bm{a_{2}}+ c\bm{a_{1}}$  \\
+        SEE FIG 2, FIG 4: col interchanges have no effect on volume.
+    \subsubsection{Linear Transformations}
+        Let $T:\R^2\mapsto\R^2$ be the LT determined by 2x2 or 3x3 MX A.
+        If S is a parallelogram/parallelepiped in $\R^2$ then
+        \begin{align*}
+            \{\text{area of}T(S)\} &=  |\text{det}A|\cdot \{\text{area of}A\} \\
+            \{\text{vol of}T(S)\} &=  |\text{det}A|\cdot \{\text{vol of}A\}
+        \end{align*}
+\end{document}

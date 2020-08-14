@@ -1,0 +1,248 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath} 
+\usepackage{amssymb} 
+\usepackage{bm} 
+\usepackage{geometry} 
+\usepackage{graphicx} 
+%allowdisplaybreak
+\begin{document}
+\title{CH 3 Discrete Random Variables and Their Probability Distributions}
+\author{mrevanisworking}
+\maketitle
+
+\subsection{Basic Definition}
+    \subsubsection{Discrete Random Variable (DRV)}
+        a RV Y is said to be discrete if it can assume only a 
+        finite or countably infinite num of distinct vals\\
+        collection of probabilities is the probability distribution
+\subsection{Probability Distribution for a DRV}
+    uppercase letter such as Y for RV, and lowercase such as y
+    for particular value of that RV.\\
+    $ Y = y $ means: the set of all points in S assigned to the
+    value y by the RV Y.
+    \subsubsection{Probability of RV Y}
+        P that Y takes on the value y, $ P(Y = y) $ is defined as the sum
+        of the P of all SP in S that are assigned the value y.
+        sometimes noted as $ p(y) $\\
+        called the probability function for Y
+    \subsubsection{Definition of Probability Distribution}
+        the PD for a discrete var Y can be repr by a formula, table, graph
+        that provides $ p(y) = P(Y = y) $ for all y\\
+        Any value y not explicitly assigned a probability is understood
+        to be 0
+    \subsubsection{Sum of 1 Theorem}
+        For any discrete PD:\\
+        1. $ 0 \le p(y) \le 1 $ for all y\\
+        2. $ \sum_{y}p(y) = 1 $, where the summation is over all vals of y
+        with NZ P
+\subsection{Expected Value of a RV or a Fxn of RV}
+    \subsubsection{Expected Value of DRV}
+        let Y be a DRV w/ P fxn $ p(y) $, then the EV of is:
+        \begin{align*}
+            E(Y) = \sum_{y}yp(y)
+        \end{align*}
+        if the sum is convergent.\\
+        if $ p(y) $ is accurate for the population FD, then $ E(Y) = \mu $
+        is the population mean
+    \subsubsection{ HELP Theorem }
+        let Y be DRV w/ P fxn $ p(y) $ and $ g(Y) $ be a real val Fxn of Y.
+        Then the EV of $ g(Y) $ is:
+        \begin{align*}
+            E[g(Y)] = \sum_{all y}g(y)p(y)
+        \end{align*}
+    \subsubsection{Parameter of $ p(y) $ Definition of Variance and SD}
+        if Y is a RV w/ mean $ E(Y) = \mu $ , the variance of a RV Y is defined
+        to be the EV of $ (Y - \mu )^2  $:
+        \begin{align*}
+            V(Y) = E[(Y - \mu )^2 ]
+        \end{align*}
+        the SD of Y is the positive square root of $ V(Y) $\\
+        If $ p(y) $ is accurate then $ E(Y) = \mu , V(Y) = \sigma ^2  $
+        and $ \sigma $ for the population SD
+    \subsubsection{EV constant Theorem}
+        Let Y be DRV w/ PF $ p(y) $ then $ E(c) = c $
+    \subsubsection{EV Scalar Multiplication Theorem}
+        Let Y be DRV w/ PF $ p(y) , g(Y)$ be a fxn of Y, c constant, then
+        \begin{align*}
+            E[cg(Y)] = cE[g(Y)]
+        \end{align*}
+    \subsubsection{EV Addition Theorem}
+        Let Y be DRV w/ PF $ p(y), g1tok(Y) $ be k fxns of Y. Then
+        \begin{align*}
+            E[g1tok(Y)] = E[g_{1}(Y)] + \cdots + E[g_{k}(Y)]
+        \end{align*}
+    \subsubsection{EV ffset Theorem}
+        Let Y be DRV w/ PF $ p(y) $ and mean $ E(Y) = \mu  $, then
+        \begin{align*}
+            V(Y) = \sigma ^2 = E[(Y - \mu )^2 ] = E(Y^2 ) - \mu ^2 
+        \end{align*}
+\subsection{Binomial Probability Distribution}
+    \subsubsection{Definition of Binomial Experiment}
+        A binomial experiment:\\
+        1. the experiment consists of a fixed num, n, of identical trials\\
+        2. Each trial results in one of two outcomes:
+        sucess S or failure F\\
+        3. The P of success on a single trial is equal to some value p and
+        remains the same form from trial to trial. The P of a failure is 
+        equal to $ q = (1-p) $\\
+        4. trials are independent\\
+        5. the RV of interest is Y, the num of successes observed during
+        n trials.\\
+        (p is probability of success, q is probability of failure)
+    \subsubsection{Binomial Distribution Theorem}
+        An RV Y has a binomial distribution based on n trials w/ 
+        success P p IFF
+        \begin{align*}
+            p(y) = \begin{pmatrix}n\\y\end{pmatrix}p^yq^{n-y}
+        \end{align*}
+        where y0ton and $ 0 \le p \le 1 $\\
+        see 103, FIG3.4\\
+        see binomial expansion:
+        \begin{align*}
+            \sum_{y=0}^{n} \begin{pmatrix}n\\y\end{pmatrix}
+            p^yq^{n-y} = (q+ p)^{n} = 1
+        \end{align*}
+    \subsubsection{Mean and Varaince of a Binomial Random Variable}
+        Let y be a binomial RV based on n trials and success P p. then
+        \begin{align*}
+            \mu = E(Y) = np\text{ and } \sigma = V(Y) = npq
+        \end{align*}
+        Common tricks: $ \sum p(y) = 1 $ \\
+        $ E(Y^2) =? E[Y(Y-1)] $\\
+        see method of maximum likelihood in CH9
+\subsection{The Geometric Probability Distribution}
+    Events denoted by on witch trial is the first success\\
+    trials are independent
+    \subsubsection{Geometric Probability Distribution}
+        an RV Y is said to have a geometric probability distribution IFF
+        \begin{align*}
+            p(y) = q^{y-1}p
+        \end{align*}
+        for y1toinf and $ 0 \le p \le 1 $ \\
+        often used to model distributions of lengths of waiting times
+    \subsubsection{Mean and Variance of Geometric PD}
+        \begin{align*}
+            \mu = E(Y) = \frac{1}{p} \text{ and } \sigma ^2 = V(Y) = 
+            \frac{1-p}{p^2}
+        \end{align*}
+\subsection{Negative Binomial Probability Distribution }
+    R2:\\
+    knowing the number of the trial on which the rth 
+    success occurs
+    \subsubsection{Negative BPD}
+        a RV Y has a NBPD IFF
+        \begin{align*}
+            p(y) = \begin{pmatrix}y-1\\r-1\end{pmatrix}p^rq^{y-r}
+        \end{align*}
+        $ y = r, r+ 1,r+ 2...,\,0 \le p \le 1 $
+    \subsubsection{Mean, Variance of NBPD}
+        \begin{align*}
+            \mu = E(Y) = \frac{r}{p} \text{ and }
+            \sigma ^2 = V(Y) = \frac{r(1-p)}{p^2} 
+        \end{align*} 
+\subsection{The Hypergeometric Probability Distribution}
+    \subsubsection{Hypergeometric Probability Distribution}
+        RV Y has a HGPD IFF
+        \begin{align*}
+            p(y) \frac{\begin{pmatrix}r\\y\end{pmatrix}}
+            {\begin{pmatrix}N-r\\n-y\end{pmatrix}}
+            {\begin{pmatrix}N\\n\end{pmatrix}} 
+        \end{align*}
+        where y is an int 1ton:
+        $ y \le r, n-y \le N-r $
+    \subsubsection{Mean and Variance of HGPD}
+        Y is RV w/ HGPD
+        \begin{align*}
+             \mu = E(Y) = \frac{nr}{N} \text{ and } \sigma ^2 = V(Y) = 
+            n(\frac{r}{N})(\frac{N-r}{N})(\frac{N-n}{N-1})
+        \end{align*}
+        see 127 for relation to BPD\\
+        Y is approx a BPD when N is large and n is realtively small.\\
+        the limit as N goes to infinity is a BPD
+\subsection{The Poisson Probability Distribution HELP}
+    131 derived the Possion distribution:
+    \begin{align*}
+        \lim_{n\to\infty}(1-\frac{\lambda }{n} )^n = e^{-\lambda }
+    \end{align*}
+    obtains
+    \begin{align*}
+        p(y) = \frac{\lambda ^{y}}{y!}e^{-\lambda } 
+    \end{align*}
+    for small p and large n, the binomial counterpart can be used.\\
+    good distribution for rare occasions (accidents)
+    \subsubsection{Poisson Probability Distribution}
+        RV Y is PPD IFF
+        \begin{align*}
+            p(y) = \frac{\lambda ^{y}}{y!}e^{-\lambda } 
+        \end{align*}
+        y0toinf, $ \lambda > 0 $
+    \subsubsection{Mean, Varaince for PPD}
+    \begin{align*}
+        \mu = E(Y) = \lambda \text{ and } \sigma ^2 = V(Y) = \lambda 
+    \end{align*}
+
+\subsection{Moments and Moment-Generating Functions}
+    $ \mu ,\sigma  $ do not provide a unique characterization of
+    the distribution of Y\\
+    MGF can be used to find moments associated with RV\\
+    MGF can be used to establish equivalence of two PD.
+    \subsubsection{Definition of Moment about the origin}
+        the kth moment of a RV Y taken about the origin is defined to be
+        $ E(Y^{k}) $ and is denoted by $ \mu '_{k} $, where 
+        $ \mu'_{2} = E(Y^2 ) $ is employed in T3.6 for finding $ \sigma^2  $
+    \subsubsection{Definition of Moment about its mean}
+        the kth moment of a RV Y taken about its mean, 
+        (kth central moment of Y), is $ E[(Y-\mu )^{k}] $ denoted by
+        $ \mu _{k} $, where $ \sigma ^2 = \mu _{2} $
+    \subsubsection{Definition of Moment Generation Function}
+        moment-generating fxn m(t) for a RV Y is defined to be 
+        $ m(t) = E(e^{tY}) $. a MGF for Y exists if there exists a positive
+        constant b such that $ m(t) $ is finite for $ |t| \le b $
+    \subsubsection{kth Derivative of MGF Theorem}
+        if m(t) exists, then for any positive int k:
+        \begin{align*}
+            \frac{d^{k}m(t)}{dt^{k}}\big]_{t=0} = m^{(k)}(0) = \mu'_{k}
+        \end{align*}
+        Meaning: kth derivative of $ m(t) $ wrt t and then set $ t=0 $,
+        result is $ \mu'_{k} $
+\subsection{Probability-Generating Functions HELP R2}
+    previous PD were all DRV Y that takes positive int vals
+    (binomial, geometric, hypergeometric, Poisson)\\
+    Main use of PGF: deriving the probability function and distribution
+    for IVRV
+    \subsubsection{Definition of Probability-Generating Funxtion}
+        Y be an int val RV for which $ P(Y = i) = p_{i}$ where i0toinf.
+        The PGF P(t) for Y is:
+        \begin{align*}
+            P(t) = E(t^{Y}) p_{0} + p_{1}t + p_{2}t^2 + \cdots
+            = \sum_{i=0}^{\infty}p_{i}t^{i}
+        \end{align*} 
+        for all t such that t is finite
+    \subsubsection{kth factorial moment for PGF}
+        \begin{align*}
+            \mu _{[k]} = E[Y(Y-1)\cdots(Y-k+1)]
+        \end{align*}
+        where k is a +int
+    \subsubsection{kth derivative of PGF}
+        if P(t) is the PGF for IVRV Y, then the kth factorial moment of Y
+        \begin{align*}
+        \frac{d^{k}P(t)}{dt^{k}} \big]_{t=1}= P^{(k)}(1) = \mu _{[k]}
+        \end{align*}
+\subsection{Tchebysheff's Theorem}
+    can be used to determine lower bound for P that RV Y of interest
+    falls in an interval $ u \pm k\sigma  $
+    \subsection{Tchebysheff's Theorem}
+        let Y be RV w/ mean $ \mu  $ and finite variance $ \sigma ^2  $
+        then for any $ k >0 $
+        \begin{align*}
+            P(|Y-\mu | < k\sigma ) \ge 1 - \frac{1}{k^2 }
+        \end{align*}
+        or
+        \begin{align*}
+            P(|Y-\mu | \ge k\sigma ) \le \frac{1}{k^2 }
+        \end{align*}
+        result applies for any probability distribution
+\subsection{Summary}
+    see 150
+
+\end{document}

@@ -1,0 +1,245 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+%\usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{bm}
+
+
+\newcommand{\R}{\mathbb{R}}
+
+%\allowdisplaybreak
+\begin{document}
+\title{CH 2 Matrix Algebra}
+\author{mrevanisworking}
+\maketitle
+
+\subsection{Matrix Operations}
+    columns are vectors in $ \R^m $ 
+    \begin{align*}
+        A = \begin{bmatrix}
+            \bm{a_{1}} & \bm{a_{1}} & \cdots & \bm{a_{1}} 
+        \end{bmatrix}
+    \end{align*} 
+    Diagonal entries form the main diagonal (MD). \\
+    Diagonal Matrix (DM) is $ n \times n $  MX whose nondiags are zero. \\
+    Zero Matrix (ZM) is zero for all entries 
+    \subsubsection{Sums and Scalar Multiples}
+        MX equal if same size and cols equal. \\
+        Sum $ A + B $  is the sum of the columns. Only defined when A and B
+        are the same size. \\
+        Scalar multiple of a matrix is scalar times cols.
+    \subsubsection{Matrix Operations Theorem}
+        see 95 
+    \subsubsection{Matrix Multiplication Definition}
+        If A is $ m \times n $  and B is $ n \times p $  with
+        $ \bm{b_{1}},\dots ,\bm{b_{p}} $ AB is the $ m \times p $  whose columns
+    are $ A\bm{b_{1}},...,A\bm{b_{p}} $
+    \begin{align*}
+        AB =  A\begin{bmatrix}
+            \bm{b_{1}} & \bm{b_{2}} & \cdots & \bm{b_{p}}
+        \end{bmatrix} = \begin{bmatrix}
+            A\bm{b_{1}} & A\bm{b_{2}} & \cdots & A\bm{b_{p}}
+        \end{bmatrix}
+    \end{align*}
+        In other words, it is the MX A times the cols of B
+    \subsubsection{Row-Column Rule for Computing AB}
+        If AB is defined then 
+        \begin{align*}
+            (AB)_{ij} = a_{i1}b_{1j} + \cdots + a_{in}b_{nj}
+        \end{align*}
+    \subsubsection{Properties of Matrix Multiplication Theorem}
+        Associative, distributive, scalar, identity \\
+        left-multiplied (BA), right-multiplied (AB) \\
+        $ AB \ne BA $ \\
+        Cancelation laws do not apply $ AB = AC \ne B = C $ \\
+        if $ AB = 0 $ then cannot conclude that $ A = 0, B = 0 $ 
+        $ A^0 $  is the identity MX 
+    \subsubsection{Transpose of a MX properties Theorem}
+        switching r and c where $ m \times n -> n \times m $ \\
+        T is not exponent \\
+        a. $ (A^{T})^{T} = A$ \\
+        b. $ (A + B)^{T} = A^{T} + B^{T} $ \\
+        c. $ (rA)^{T} = rA^{T} $ \\
+        d. $ (AB)^{T} = B^{T}A^{T} $ 
+\subsection{The Inverse of a Matrix}
+    A is invertible if there is $ n \times n $  MX C that
+    \begin{align*}
+        CA = I, AC = I
+    \end{align*}
+    where I is ID MX. C is the inverse of A and unique
+    \begin{align*}
+        A^{-1}A = I = AA^{-1}
+    \end{align*}
+    Not invertible MX is singular matrix SMX, invertible is NSMX 
+    \subsubsection{Invertible Theorem} 
+        If the determinant $ ad - bc \ne 0 $ A invertible
+        \begin{align*}
+            A^{-1} = \frac{1}{ad-bc} \begin{bmatrix}
+            d&-b\\
+            -c&a\\
+            \end{bmatrix}
+        \end{align*}
+    \subsubsection{Invertible Unique Solutions Theorem}
+        If A is invertible $ n \times n $  then each $ \bm{b}\in\R^n $,
+        the equation $ A\bm{x} = \bm{b} $  has the unique solution
+        $ \bm{x} = A^{-1}\bm{b} $ .
+    \subsubsection{Properties of Invertible MX Theorem}
+        b. if A,B are $ n \times n $  invertible MX, then so it AB
+        $ (AB)^{-1} = B^{-1}A^{-1} $ \\
+        c.$ (A^{T})^{-1} = (A^{-1})^{T} $ 
+    \subsubsection{Elementary MX}
+        obtained by performing one ERO on IDMX \\
+        if an ERO on an $ m \times n $  A, then result is
+        $ EA $  where $ m \times m  $  E is created by
+        same row operation on $ I^{m} $  \\
+        All EMX are invertible. it transforms E back into I
+    \subsubsection{Inveritble IFF Row Equivalent Theorem}
+        A is invertible IFF A is RE to $ I_{n} $  \\
+        ERO sequence on A reduces it to $ I^{n} $ 
+    \subsubsection{Algorithm for Finding $ A^{-1} $}
+        RR the AM
+        \begin{align*}
+            \begin{bmatrix}
+                A & I
+            \end{bmatrix}
+        \end{align*} 
+        If A is RE to I, then 
+         \begin{align*}
+            \begin{bmatrix}
+                A & I
+            \end{bmatrix}
+            = 
+            \begin{bmatrix}
+                I & A^{-1}
+            \end{bmatrix}
+        \end{align*} 
+        else A no inverse
+        
+\subsection{Characterizations of Invertible MX}
+    \subsubsection{Invertible Matrix Theorem for Square MX}
+        see proof \\
+        A is a square MX then all true or all false: \\
+        a. A is invertible \\
+        b. A is RE to square ID MX \\
+        c. A has n PP \\
+        d. $ A\bm{x} = \bm{0} $  has only TS \\
+        e. cols of A form linearly independent set \\
+        f. lin trans $ \bm{x} \mapsto A \bm{x} $  is one-to-one \\
+        g. $ A\bm{x}= \bm{b} $  has at least one solution for each 
+        $\bm{b}\in\R^n$  \\
+        h. the cols of A span $ \R^n $  \\
+        i. the lin trans above\^ maps $ R^n \mapsto R^n $  \\
+        j. square MX C that $ CA = I $ \\
+        k. square MX D that $ AD = I $ \\
+        l. $A^{T}$  is invertible \\
+        therefore
+        if $ AB = I $  then A and B are both invertible, with
+        $ B = A^{-1},A = B^{-1} $
+    \subsubsection{Invertible Linear Transformations Theorem}
+        ILT if T is invertible. \\
+        Theorem: T is invertible IFF A is invertible MX. meaning
+        the LT S is $ S(\bm{x}) = A^{-1}\bm{x}$ is a unique fxn \\
+        ill-conditioned matrix: invMX that can become similar if some entries
+        changed. \\
+        condition number: larger the num, closer MX is to being singular.
+\subsection{Partitioned Matricies}
+    PMX: subMX in MX 
+    \subsubsection{PMX Operations}
+        if A, B same sizes then block by block addition/scalar mult \\
+        A and B are conformable for block multiplication if can
+        separate blocks into a defined MX multiplication.
+    \subsubsection{Column-Row Expansion of AB Theorem}
+        if $ m \times n,n \times p $ 
+        \begin{align*}
+            AB &=  [col_1(A) \cdots col_n(A)][\vdots row_n(B)] \\
+            AB &= col_1(A)row_1(B)\cdots
+        \end{align*}
+    \subsubsection{Inverse of PMX}
+    SEE EXAMPLES \\
+        A block diagonal MX (BDMX) is a PMX with no blocks off
+        the main diagonal of blocks \\
+        BDMX is invertible IFF each block on diagonal is invertible.
+\subsection{Matrix Factorizations}
+    \subsubsection{LU Factorization}
+        L is mxm lower triangular MX with 1's on diag \\
+        U is mxn echelon form of A. \\
+        L is invertible and the unit lower triagnular matrix (ULTM) \\
+        $ A = LU $ where $ A\bm{x} = \bm{b} $  and \\
+        $ L\bm{y} = \bm{b} $  \\
+        $ U\bm{x} = \bm{y} $  to solve for L and U 
+    \subsubsection{LU Factorization Algorithm}
+        1. Reduce A to EFM by RRO \\
+        2. Place entries L such that same sequence of RO reduces L to I \\
+        SEE EXAMPLE 2 \\
+        RO that create zeros in first col of A create them in L as well.
+\subsection{The Leontirf Input-Output Model}
+    APPLICATION SO SKIP
+\subsection{Applications to Computer Graphics}
+    APPLICATION SO LATER (THIS ONE IS IMPORTANT)
+\subsection{Subspaces of $ \R^n $}
+    A subspace of $ \R^n $  is any set H in $\R^ n$ that has three properties\\
+    a. The $\bm{0}$ is in H \\
+    b. For each $\bm{u}$  in H and scalar c, the vec $c\bm{u}$  is in H \\
+    Meaning: a subSpace is closed under addition and scalar mult. \\
+    note: line L not through the origin is not a subspace (doesn't 
+    contain origin) \\
+    $\bm{0}$  is zero subspace  
+    \subsubsection{Column Space and Null Space}
+        DEF: col space of A is the set Col A of all LC of the cols of A \\
+        DEF: null space of A is the set Nul A of all solutions of 
+        $ A\bm{x} = \bm{0} $  
+    \subsubsection{Null space in $\R^n$  Theorem }
+        null space of mxn A is SBS of $\R^n$. \\
+        SS of $ A\bm{x} = \bm{0} $  of m HLE in n unknowns is a SBS of $\R^n$ \\
+        $\bm{v}$  is Nul A if $A\bm{v}$  is $\bm{0}$  \\
+        Nul is defined implicitly.\\
+        Col is defined explicitly.
+    \subsubsection{Basis for a SBS}
+        DEF: a basis for SBS H of $\R^n$ is a LI set in H that spans H\\
+        Standard Basis Vectors is the set of vectors with a 1 entry and
+        the rest zeros (Think $\hat{i},\hat{j},\hat{k}$ )\\
+        SEE EXAMPLES \\
+        Theorem: The pivot cols of A form a basis for col space of A
+\subsection{Dimension and Rank}
+    \subsubsection{Coordinate Vector Definition}
+    set $\mathcal{B} = \{\bm{b_{1}},\dots ,\bm{b_{p}}\}$ is a basis
+    for SBS H. For each $\bm{x}$  in H, the coordinates of x relative
+    to the basis $\mathcal{B}$  are weights $\dots c_{p}$  such that
+    $ \bm{x}= \dots c_{p}\bm{b_{p}} $  and vec in $\R^p$ 
+    \begin{align*}
+        [x]_{\mathcal{B}} = \begin{bmatrix}
+        c_{1}\\
+        \vdots \\
+        c_{p}
+        \end{bmatrix}
+    \end{align*}
+    is the coordinate vector of x relative to B or\\
+    $\mathcal{B}$-coordinate vector of $\bm{x}$  \\
+    H is isomorphic to $\R^2$  when it is 1-1 (preserves LC) 
+    \subsubsection{DEF:The Dimension of a Subspace}
+        dimension of NZ SBS H, dim H, is num of vec in any basis for H\\
+        dimension of ZSBS is zero.\\
+        $\R^n$  has dimension n.
+    \subsubsection{Rank}
+        rank of A, rank A, is the dimension of col space of A \\
+        pivot col of A form basis for Col A -> rank of A is num of 
+        pivot col in A
+    \subsubsection{Rank Theorem}
+        If A has n cols, then $\text{rank}A + \text{dim Nul}A = n$ 
+    \subsubsection{Basis Theorem}
+        Let H be p-dim SBS of $\R^n$  Any LI set of p ele in H is
+        a basis for H. \\
+        Any set of p ele of H that spans H is a basis for H
+    \subsubsection{Invertible Matrix Theorem for Rank!!!!!}
+        A is nxn then all true if invertible \\
+        m. the cols form a basis of $\R^n$ \\
+        n. Col $A = \R^n$  \\
+        o. dim Col $A = n$  \\
+        p. rank $A = n$  \\
+        q. Nul $A = \{\bm{0}\}$ \\
+        r. dim Nul $A = 0$ 
+\end{document}
+

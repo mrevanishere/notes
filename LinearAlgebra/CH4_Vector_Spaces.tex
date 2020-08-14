@@ -1,0 +1,167 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+%\usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{bm}
+
+
+\newcommand{\R}{\mathbb{R}}
+
+%\allowdisplaybreak
+\begin{document}
+\title{CH 3 Determinants}
+\author{mrevanisworking}
+\maketitle
+
+\subsection{Vector Spaces and Subspaces}
+    \subsubsection{Vector Space Definition}
+        A nonempty set V of vectors, where addition and scalar mult
+        are defined by the 10 commandments and 3 more. SEE 192,193
+    \subsubsection{Subspaces}
+        See CH2 for DEF \\
+        subspace is guaranteed a vector space \\
+        subspace is used when at least 2 vector spaces are in mind
+    \subsubsection{Vector Space, Span }
+        Linear Combination: any sum of scalar multiples of vectors,
+        Span is set of all vec that can be written as LC \\
+        if vectors are in a VS, then Span of vectors is a subspace
+        of V.
+\subsection{Null Spaces, Column Spacess, and Linear Transformations}
+    \subsubsection{Null Space of Matrix}
+        see CH2 notes \\
+        set of all $\bm{x}\in\R^n$  mapped to zero vector via LT
+    \subsubsection{Null Space is Subspace Theorem}
+        NS is subS of $\R^n$.
+        Set of all Solutions to $A\bm{x}= \bm{0}$  of m HLE in n 
+        unknowns is a subS of $\R^n$ 
+    \subsubsection{Explicit Description Nul A}
+        solving $A\bm{x}= \bm{0}$  produces explicit description of
+        Nul A \\
+        SEE EXAMPLE 3
+    \subsubsection{Col Space of MX}
+    $\text{Col} A = \text{Span}\{\bm{a_{1}},\dots ,\bm{a_{n}}\}$ \\
+        Col space is a subS of $\R^n$
+        \begin{align*}
+            \text{Col} A = \{\bm{b}:\bm{b} = A\bm{x} \text{for some}\bm{x}
+            \in\R^n\}
+        \end{align*}
+        Col space is range of LT\\
+        CS of mxn A is all of $\R^m$  IFF the equation
+        $A\bm{x} = \bm{b}$  has a sol for each $\bm{b}\in\R^m$ 
+    \subsubsection{Contrast between Nul A and Col A}
+        when MX not square, Nul A and Col A are separate.\\
+        when square, Nul A and Col A share ZV, and some others in special cases\\
+        SEE 206 
+    \subsubsection{Kernel and Range of LT}
+        a LT from VS into another VS is a rule that assigns 
+        each $\bm{x}$  to a unique number $T(\bm{x})$ such that
+        vector addition and scalar mult is defined.\\
+        Kernel (null space of LT) \\
+        Range (col space of LT) \\
+        see 3Blue1Brown \\
+        DIFFERENTIATION IS A LINEAR TRANSFORMATION see ex7 
+\subsection{Linear Independent Sets; Bases}
+    \subsubsection{THEOREM 4: sec 1.7}
+    \subsubsection{Definition of Basis see previous ch}
+    \subsubsection{Spanning Set Theorem}
+        S is a set of vectors in V, H is span of that set of vectors \\
+        a. if one vec in S is a LC of the remaining, then the set
+        formed by S removing that vec still spans H \\
+        b. if $H\ne \{\bm{0}\}$, some subset of S is a basis of H \\
+        basis is a spanning set small as possible to be linearly independent
+    \subsubsection{Bases for Nul A and Col A}
+        base for Nul A is in 4.2 LIS example.\\
+        base of Col A SEE EX 8. NPC is an LC of the PC. \\
+        FACT: PC of A form a basis for Col A. (EFM)
+\subsection{Coordinate Systems}
+    \subsubsection{The Unique Representation Theorem}
+        let B be the basis, then for each $\bm{x}\in V$  there
+        exists a unique set of scalars c that
+        \begin{align*}
+            \bm{x} = c_{1}\bm{b_{1}}+ \cdots + c_{n}\bm{b_{n}} 
+        \end{align*}
+        (Just think of basis vectors spanning around space)
+        \subsubsection{Definition of Coordinates (see CH2)}
+            coordinate mapping by B
+        \subsubsection{Change of Coordinates Matrix}
+            \begin{align*}
+                P_{\mathcal{B}} = \begin{bmatrix}
+                \bm{b_{1}} & \cdots & \bm{b_{n}}
+                \end{bmatrix}
+            \end{align*}
+            and $ \bm{x} = \cdots+ c_{n}\bm{b_{n}} $  
+            \begin{align*}
+                \bm{x} = P_{\mathcal{B}} \big[\bm{x}\big]_{\mathcal{B}}
+            \end{align*}
+            where $P_{\mathcal{B}}$ is a change-of-coordinates MX from B
+            to standard basis in $\R^n$ 
+        \subsubsection{Coordinate mapping is 1-1 LT Theorem 8}
+            B is basis for VS V, then the coordinate mapping
+            \begin{align*}
+                \bm{x} \mapsto \big[\bm{x}\big]_{\mathcal{B}}
+            \end{align*}
+            is a 1-1 LT from V onto $\R^n$ 
+\subsection{Dimension of a VS}
+    \subsubsection{>n Basis set is Linearly Dependent Theorem}
+        if basis B has n vectors, then any set in V that has more 
+        than n vectors is LD.
+    \subsubsection{All bases of a VS Theorem}
+        If a VS V has a basis of n vec, then every basis of V 
+        must have n vec
+    \subsubsection{Definition of Dimension}
+        if V is spanned by a finite set, then V is finite-dimensional,
+        and dim V is the num of vec in basis for V.
+        dim of 0 VS is zero. If V is not spanned by finite set,
+        V is infinite-dimensional.
+    \subsubsection{Subspaces of Finite-Dimensional Space Theorem(FDS)}
+        SUBSPACE THEOREM 11: let H be subS of FDVS V.
+        any LI set in H can be expanded to a basis for H,
+        H is FD and dim $H\le \text{dim} V$ 
+    \subsubsection{The Basis Theorem}
+        see CH 2
+    \subsubsection{Dimensions of Nul A and Col A}
+        dim Nul A is num of FV in $A\bm{x}= \bm{0}$  \\
+        dim Col A is num of PC in A
+\subsection{Rank}
+    \subsubsection{Row Space}
+        set of all LC of row vec is row space RS of A,
+        denoted by Row A. Row A is a subS of $\R^n$ 
+    \subsubsection{Row Space Theorem}
+        If two MX are RE, then RS is the same.
+        If B is in EFM, the NZ rows of B form a basis for the RS of
+        A as well as B.
+    \subsubsection{Rank Theorem see CH2}
+    
+        SEE EX5
+    \subsubsection{Rank, Invertible MX Theorem}
+        all true/all false:\\
+        m. The columns of A form a basis of $\R^n$ \\
+        n.  $\text{Col}A = \R^n $ \\  
+        o. $ \text{dim Col}A = n $  \\
+        p. $ \text{rank} A = n$  \\
+        q. $ \text{Nul}A = \{\bm{0}\} $ \\
+        r. $ \text{dim Nul} A = 0 $ 
+        pg 254 for Row space of IMX Theorem
+\subsection{Change of Basis}
+    \subsubsection{Change of Coordinates MX from B to C Theorem}
+        B is b basis and C is c basis of V, then there is unique nxn MX
+        such that
+        \begin{align*}
+            \big[\bm{x}\big]_{\mathcal{C}} =
+            P_{\mathcal{C}\leftarrow \mathcal{B}}  \big[\bm{x}\big]_{\mathcal{B}}
+        \end{align*}
+        SEE FIG2 \\
+        inverse is b larrow c
+    \subsubsection{Change of Basis in $\R^n$ }
+        B to the standard basis E is still B \\
+        SEE 243 for formula and notation
+        $ P_C^{-1}P_B = P_{C\leftarrow B} $ 
+\subsection{APPLICATIONS to Difference Equations}
+    later
+\subsection{APPLICATIONS to Markov Chains}
+    learn in stats
+
+\end{document}

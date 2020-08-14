@@ -1,0 +1,158 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+%\usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{bm}
+
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+%\allowdisplaybreak
+\begin{document}
+\title{CH 5 Eigenvectors and Eigenvalues}
+\author{mrevanisworking}
+\maketitle
+
+\subsection{Eiegenvectors and Eigenvalues}
+    recheck EV and Evec.
+    ****************
+    \subsubsection{Definition}
+        Eigenvector (Evec) of nxn A is NZ vec $\bm{}$ such that
+        $A\bm{x} = \lambda \bm{x} $  for some $\lambda$. \\
+        Eigenvalue (EV) is that scalar $\lambda $ of A if there is a 
+        nontrivial solution $\bm{x}$  of the equation. or the
+        equation 
+        \begin{align*}
+            (A-\lambda I) \bm{x} = \bm{0}
+        \end{align*}\\
+        $\bm{x}$  is the Evec corresponding to $\lambda$  
+    \subsubsection{Eigenspace}
+       set of all solutions of that equation is the nullspace of
+       $A-\lambda I$. The set is a subS of $\R^n$  called the 
+       eigenspace (ES) of A corresponding to $\lambda $.\\
+       has ZV and all EV of $\lambda $ \\
+       See FIG3 (A acts on ES as dilation)
+    \subsubsection{EV of Triangular Theorem}
+        EV of triMX are the entries on its main diag. \\
+        0 is an EV of A IFF A is not invertible.
+    \subsubsection{Linearly Independent EV Theorem}
+        if v are EV corresponding to $\lambda $  of nxn A,
+        then the set v is LI.
+    \subsubsection{EV and Difference Equations}
+        SINCE APPLICATION later
+\subsection{The Characteristic Equation}
+    \subsubsection{Determinants SEE CH3}
+    \subsubsection{The Characteristic Equation}
+        a scalar is an EV of nxn A IFF $\bm{\lambda }$  satisfies
+        $\text{det}(A - \lambda I) = 0$ \\
+        solving gives a characteristic polynomial of A.\\
+        Some EV have multiplicities. \\
+        Complex roots have complex EV (CEV).
+    \subsubsection{Similarity Theorem}
+        if nxn A,B are similar, then they have same
+        characteristic polynomial and the same EV with same
+        multiplicites.\\
+        1. see warning \\
+        2. Similarity $\ne $  RE, RO usually changes EV.
+    \subsubsection{APPLICATIONS to Dynamical Systems}
+        later
+\subsection{Diagonalization}
+    EV-Evec info can be displayed as $A = PDP^{-1}$  where D is DMX.
+    SMX is diagonalizable if A is similar to a DMX.
+    \subsubsection{The Diagonalization Theorem}
+        nxn A is diagonalizable IFF A has n LD Evec.
+        $A = PDP^{-1}$  where D is DMX, IFF the cols of P are n
+        LI Evec of A. diag entries of D are Evec of A that correspond
+        to the Evec in P. \\
+        MEANING: A is diagonalizable IFF enough Evec to form 
+        basis of $\R^n$  which is called the eigen vector basis of
+        $\R^n$. (EvecB) 
+    \subsubsection{Diagonalizing Matricies}
+        Find an IMX P, and DMX D  to satisfy equation in Diagonalization
+        Theorem.\\
+        1. Find the EV of A (characteristic equation) \\
+        2. Find n linearly independent Evec of A \\
+        3. Construct P from the vec in step 2\\
+        4. Construct D from the corresponding EV.
+    \subsubsection{Diagonalizable Theorem}
+        nxn MX w/ n distinct EV is diagonalizable.
+    \subsubsection{Not Distinct EV Diagonalizable Theorem}
+        a. for $1\le k\le p$  the dim of ES for $\lambda _{k}$  is less
+        than or equal the multiplicity of the EV $\lambda _{k}$  \\
+        b. A is diagonalizable IFF the sum of dim of ES equals n,
+        that happens IFF:
+        (i) characteristic polynomial factors into linear factors,
+        (ii) the dim of ES for each $\lambda _{k}$  equals the multiplicity
+        of $\lambda _k$  \\
+        c. if A is diagonalizable and $\mathcal{B_{k}}$  is a basis for the
+        ES wrt $\lambda_k$  for each k, then total collection of vec
+        in sets B 1-p forms an Evec basis for $\R^n$\\
+        SEE EX6
+\subsection{Eigenvectors and Linear Transformations}
+    \subsubsection{MX of LT}
+        \begin{align*}
+            [T(\bm{x})]_C = M[\bm{x}]_B
+        \end{align*}
+        Mis called the MX for T relative to the bases B and C \\
+        See FIG1, FIG2, EX 1
+    \subsubsection{Linear Transformations from V into V}
+        HELP, SEE EX2
+    \subsubsection{Diagonal Matrix Representation Theorem}
+        Suppose APDP (from above) where D is a diagonal nxx. If B
+        is basis for $\R^n$  formed from col of P, then D is
+        the B-MX for the transformation
+        \begin{align*}
+            \bm{x} \mapsto A\bm{x}
+        \end{align*}
+        MEANING: describing same LT with different bases
+    \subsubsection{Similarity of MX Representations}
+        the set of all MX similar to A coincides with the
+        set of all MX representations of the transformation
+        \begin{align*}
+            \bm{x} \mapsto A\bm{x}
+        \end{align*}
+\subsection{Complex Eigenvalues}
+    \subsubsection{See Examples}
+        complex Evec describe rotations.\\
+        See FIG1
+    \subsubsection{Real and Imaginary Parts of Vectors}
+        $\text{Re}\bm{x}$  is real part of complex conjugate,\\
+        $ \text{Im}\bm{x} $ is imaginary part of complex conjugate,\\
+        Properties of complex conjugates carry over to complex
+        matrix algebra. see 300.
+    \subsubsection{Evec and EV of Real MX that acts on $\C^n$ }
+        \begin{align*}
+            A\bm{\overline{x}} = \overline{A\bm{x}} = 
+            \overline{\lambda \bm{x}} = \overline{\lambda }\overline{\bm{x}}
+        \end{align*}
+        when A is real, its CEV occur in conjugate pairs.\\
+        See EX 6/FIG2/FIG3:\\
+        angle $\phi $  is the argument of $\lambda= a + bi$  .\\
+        transformation  $\bm{x}\mapsto C\bm{x}$  can be viewed as the
+        composition of a rotation through $\phi $  and scaling by 
+        $|\lambda |$ 
+    \subsubsection{APCP Theorem}
+        let A be real 2x2 w/ CEvec $\lambda = a-bi(b\ne 0)$  and
+        an associated Evec $\bm{v}$  in $\C^2$, then:  
+        \begin{align*}
+            A=PCP^{-1}\,  \text{where} P = 
+            [\text{Re}\bm{v}\,\text{Im}\bm{v}] \text{and}
+            C= \begin{bmatrix}
+            a&-b\\
+            b&a\\
+            \end{bmatrix}
+        \end{align*}
+        a plane is invariant under A if it is a rotated plane.
+\subsection{APPLICATIONS Discrete Dynamical Systems}
+    later in round 2
+\subsection{APPLICATIONS to Differential Equations}
+    later in differential equations
+\subsection{Iterative Estimated Eigenvalues}
+    \subsubsection{The Power Method}
+    \subsubsection{The Inverse Power Method}
+        
+\end{document}

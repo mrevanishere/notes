@@ -1,0 +1,199 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+%\usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{bm}
+
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+%\allowdisplaybreak
+\begin{document}
+\title{CH 5 Eigenvectors and Eigenvalues}
+\author{mrevanisworking}
+\maketitle
+
+\subsection{Inner Product, Length, Orthogonality}
+    \subsubsection{The Inner Product (Dot Product), Length of a vector}
+        ***dot product is a TYPE of Inner Product
+        see calculus CH12\\
+        process of creating unit vector sometimes called
+        normalizing v\\
+        distance formula 
+    \subsubsection{Dot Product Theorem, Pythagorean Theorem}
+        see calculus: two vectors are orthogonal if DP is 0 \\
+        two vec are orthogonal IFF pythagorean theorem
+    \subsubsection{Orthogonal Complements}
+        Orthogonal Component: z is orthogonal to W if the set of all 
+        z are orthogonal to W \\
+        denoted by $W^\perp$ \\
+        1. $\bm{x}$  is in $W^\perp$  IFF $\bm{x}$  is orthogonal to
+        every vec in a set that spans W \\
+        2. $W^{\perp}$  is a subS of $\R^n$  
+    \subsubsection{Perpindicular Subspace Theorem}
+        let A mxn. The orthogonal complement of the RS is the
+        NS of A. and the orthogonal complement of CS is the NS of $A^T$ :
+        \begin{align*}
+            (\text{Row}A)^\perp = \text{Nul}A\,\,\,
+            \text{and}\,\,\,
+            (\text{Col}A)^\perp = \text{Nul}A^T
+        \end{align*}
+        see FIG8, proof
+    \subsubsection{Angles in $\R^2 or 3$ }
+        Dot Product Theorem corollary solve for angle.
+\subsection{Orthogonal Sets}
+    a set of vectors u in $\R^n$  is an orthogonal set if
+    each pair of distinct vectors from the set is orthogonal:
+    $ \bm{u_{i}}\cdot \bm{u_{j}}= 0 $  when $i\ne j$ 
+    \subsubsection{Linearly Independent Orthogonal Set Theorem}
+        if S is an OS of NZ vec, then S is linearly indepdent and 
+        therefore is a basis for subS spanned by S.
+    \subsubsection{Orthogonal Basis}
+        a subS W of $\R^n$  is a basis for W that is also an orthogonal set
+    \subsubsection{Orthogonal Decomposition Theorem}
+        u vectors be an OB for subS W of $\R^n$. for each $\bm{y}in W$ 
+        the weights in the LC:
+        \begin{align*}
+            \bm{y} = c_{1}\bm{u_{1}}+ \cdots + c_{p}\bm{u_{p}}
+        \end{align*}
+        are given by 
+        \begin{align*}
+            c_{j} = \frac{\bm{y}\cdot \bm{u_{j}}}{u_{j}\cdot u_{j}}\,\,\,
+            (j= 1\dots p)
+        \end{align*}
+    \subsubsection{Orthogonal Projection HELP}
+        see 342/FIG2\\
+        think adjacent/base of a right triangle\\
+        Vector Orthogonal Projection of y onto L:
+        \begin{align*}
+            \bm{\hat{y}} = \text{proj}_{L}\bm{y} = 
+            \frac{\bm{y}\cdot \bm{u}}{\bm{u}\cdot \bm{u}}\bm{u}
+        \end{align*}
+    \subsubsection{Geometric Interpretation of Orthogonal Decomp Theorem}
+        see 3blue1brown comments:\\
+        think of $\hat{u}$ as the basis vec of a 1D subS of W, then
+        all the LC/projections of $\hat{i}, \hat{j}$  is mapped onto
+        that subS.\\
+        Sum of projections.
+    \subsubsection{Decomposing Force into Component Forces APPLICATION}
+        later
+    \subsubsection{Orthonormal Sets}
+        orthonormal set if orthogonal set of UNIT vec. \\
+        orthonormal basis if subS spanned by orthonormal set.
+    \subsubsection{Orthonormal Columns Identity Theorem}
+        mxn U has orthonormal col IFF $U^TU = I$ \\
+        see proof
+    \subsubsection{Properties of Orthonormal Col Theorem}
+        a. $ ||U||_{\bm{x}} = ||\bm{x}|| $  \\
+        b. $ (U\bm{x})\cdot (U\bm{y}) = \bm{x}\cdot \bm{y} $ \\
+        c. $ (U\bm{x})\cdot (U\bm{y}) = 0 $ IFF  $\bm{x}\cdot \bm{y}= 0$  \\
+        (a) and (c) say that linear mapping 
+        $\bm{x}\mapsto U\bm{x}$  preserves lengths and orthogonality.\\
+        Orthogonal Matrix:\\
+        square invertible matrix U such that
+        \begin{align*}
+            U^{-1}= U^T
+        \end{align*}
+        and has orthonormal col and rows.
+\subsection{Orthogonal Projections}
+    \subsubsection{Orthogonal Decomposition Theorem see previous sec}
+    \subsubsection{Properties of Orthogonal Projections}
+        If  $\bm{y}$  is in W = Span $\{\dots u_{p}\}$, then
+        $\text{proj}_{W}\bm{y}= \bm{y}$ 
+    \subsubsection{Best Approximation Theorem}
+        let W be subS of $\R^n$, let $\bm{y}$  be any vec in $\R^n$,
+        let $\bm{\hat{y}}$  be the orthogonal projection of
+         $\bm{y}$ onto W. Then $\bm{\hat{y}}$  is the closest point 
+         in W to $\bm{y}$ 
+         \begin{align*}
+             ||\bm{y}-\hat{y}|| \le ||\bm{y} - \bm{v}||
+         \end{align*}
+         for all $\bm{v}$  in W distinct from $\bm{y}$.
+        (Think right triangle, or this looks like stats (error))
+    \subsubsection{Orthonormal Basis Projection Theorem}
+        u vec is orthonormal basis for a subS W of $\R^n$, then
+        \begin{align*}
+            \text{proj}_{W}\bm{y}= )\cdots+ (\bm{y}\cdot \bm{u_{p}})\bm{u_{p}}
+        \end{align*}
+        If U is the matrix of u vec, then
+        \begin{align*}
+            \text{proj}_W\bm{y}= UU^T\bm{y}\,\,\,
+            \text{for all }\bm{y}\in\R^n
+        \end{align*}
+\subsection{The Gram-Schmidt Process, QR Factor}
+    \subsubsection{Gram-Schmidt Process Theorem}
+        Given basis x for a NZ subS W of $\R^n$  define
+        \begin{align*}
+            \bm{v}_{p} = \bm{x}_{p} -
+            \frac{\bm{x_{p}}\cdot \bm{v_{1}}}{\bm{v_{1}}\cdot\bm{v_{1}}}\bm{v_{1}}
+            \cdots -\frac{\bm{x_{p}}\cdot \bm{v_{p-1}}}
+            {\bm{v_{p-1}}\cdot\bm{v_{p-1}}}\bm{v_{p-1}}
+        \end{align*}
+        then set v is an orthogonal basis for W\\
+        span v = span x for $1\le k\le p$ \\
+        Process: read EX2
+    \subsubsection{Orthonormal Bases}
+        just normalize all v in orthogonal basis
+    \subsubsection{QR Factorization Theorem}
+        If A mxn with LI col, then A can be factored
+        $A = QR$  where Q is an mxn whose col form orthogonal basis for Col A\\
+        and R is an nxn upper triangular invertible MX w/ positive entries
+        on its diagonal.
+\subsection{Least-Squares Problems APPLICATIONS}
+    later in stats!!!
+\subsection{APPLICATIONS to Linear Models}
+    later in stats!!!
+\subsection{Inner Product Spaces}
+    \subsubsection{Definition}
+        associates a real num <u, v> and and satisfies:
+        1. (Commutativity)$ \big<\bm{u}, \bm{v}\big> 
+        = \big<\bm{v}, \bm{u}\big> $ \\
+        2. (Distribution)$ \big<\bm{u}+\bm{v}, \bm{w}\big> = 
+        \big<\bm{u}+\bm{w}\big> + \big<\bm{v}, \bm{w}\big>$ \\
+        3. (Scalar Mult)$ \big<\bm{cu}, \bm{v}\big> = 
+        c\big<\bm{u}, \bm{v}\big> $ \\
+        4. (Orthogonality)$ \big<\bm{u}, \bm{u}\big> \ge 0 $
+        and = 0 IFF $\bm{u}= \bm{0}$ \\
+        VS w/ Inner Product is Inner Product Space (IPS)\\
+        (Inner Product can be any function bruh)
+    \subsubsection{Lengths, Distances, Orthogonality HELP}
+        length or norm is 
+        \begin{align*}
+            ||\bm{v}|| = \sqrt{ \big<\bm{v}, \bm{v}\big> }
+        \end{align*}
+        Distance between u and v is abs(u-v) \\
+        u, v orthogonal if <u, v>=0
+    \subsubsection{Gram-Schmidt Process for IPS, Best Approximations}
+        HELP! use external resources, later round2
+    \subsubsection{Pytagorean Orthogonal Inner Product}
+        See FIG2 
+        \begin{align*}
+            ||\bm{v}||^2 = ||\text{proj}_W \bm{v}||^2 + 
+            ||\bm{v}-\text{proj}_W \bm{v}||^2
+        \end{align*}
+    \subsubsection{The Cauchy-Schwarz Inequality}
+        For all $\bm{u}, \bm{v}$  in V,
+        \begin{align*}
+            | \big<\bm{u}, \bm{u}\big> | \le 
+            ||\bm{u}|| ||\bm{v}||
+        \end{align*}
+    \subsubsection{The Triangle Inequality}
+        For all $\bm{u}, \bm{v}$  in V,
+        \begin{align*}
+            ||\bm{u}+ \bm{v}|| \le ||\bm{u}|| + ||\bm{v}||
+        \end{align*}
+        see proof
+    \subsubsection{Inner Product Calculus}
+        reimann sum see explanation \\
+        Example of inner product:\\
+        $ \big<f, g\big> = \int_{a}^{b}f(t)g(t)dt$ 
+        is an inner product that has axioms 1-4
+\subsection{APPLICATIONS of Linear Product Spaces}
+    LATER in stats!!!
+        
+        
+\end{document}

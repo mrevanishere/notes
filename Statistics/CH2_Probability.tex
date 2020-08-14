@@ -1,0 +1,225 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath} 
+\usepackage{amssymb} 
+\usepackage{bm} 
+\usepackage{geometry} 
+\usepackage{graphicx} 
+%allowdisplaybreak
+\begin{document}
+\title{CH 2 Probability}
+\author{mrevanisworking}
+\maketitle
+
+\subsection{Intro}
+    Probability: measure of one's belief in the occurence of a future event\\
+    Random events with a stable relative frequency are called RANDOM or
+    STOCHASTIC.
+\subsection{Probability and Inference}
+    see FIG 2.1 (Frequency Distribution)\\
+    probability of observed probabilities is important
+\subsection{Set Notation}
+    captial letters for sets, $ A = \{a_{1}, a_{2}, a_{3}\} $\\
+    S is a universal set if it denotes the set of all ele under consideration\\
+    A is a subset of B if every ele in A is also in B $ A \subset B $\\
+    null or empty set is ENTER NULL SYMBOL HERE\\
+    union of A and B is the set of all points in A or B or both
+    denoted by $ A union B $ \\
+    intersection of A and B is the set of all points in A and B
+    denoted by $ A intersection B $ or AB\\
+    if A is a subset of S, then the complement of A, $ \overline{A} $ is
+    the set of points that are in S but not in A.\\
+    $ A union \overline{A} = S $\\
+    Two sets A,B are disjoint or mutually exclusive if
+    $ A intersection B = null $ (no points in common)\\
+    A and $ \overline{A} $ are mutually exclusive \\
+    See Diagrams
+    \subsubsection{Most important set algebra}
+        distributive laws
+
+        DeMorgan's laws:
+    
+\subsection{The Discrete Case}
+    \subsubsection{Definition: Expiriment}
+        Experiment: the proces by which an observation is made\\
+        Events: outcomes of an experiment (denoted by capital letters here)\\
+        Compound Event: an event that can be decomposed into other events\\
+        Simple Events: events that cannot be decomposed\\
+        Each point in a set is a sample point that points to an experiment
+    \subsubsection{Simple Event}
+        Simple event cannot be decomposed and corresponds to
+        one and only one sample point. (denoted by $ E_x $)
+    \subsubsection{Sample Space}
+        Sample Space: set consisting of all possible sample points for
+        an experiement
+    \subsubsection{Discrete Sample Space}
+        DSS: contains either a finite or a countable number of 
+        ditinct sample points
+    \subsubsection{Event}
+        Event in a DSS S is a collection of sample points - any subset of S
+    \subsubsection{Definition of Probability}
+        S is a SS with an experiment. to every event A in S
+        $ P(A) $ is the probability of A so that the 3 axioms:
+        1. RF of occurence of any event must be $ P(A)\ge  0$. negative doesn't
+        make sense \\
+        2. RF of the whole SS S must be unity. $ P(S) = 1 $\\
+        3. if two events are ME(disjoint), the RF of their union is the sum of
+        their RF.\\
+        or\\
+        if $ A_{1},A_{2},A_{3}... $ form a sequence of pairwise ME events
+        in S ($ A_{i} \cap A_{j} = \text{\O} \text{ if } i\ne j$), then
+        \begin{align*}
+            P(A_{1} \cup A_{2} \cup ...) = \sum_{i= 1}^{\infty}P(A_{i}   )
+        \end{align*}
+\subsection{The Sample-Point Method}
+    1. Define experiment and determine how to describe one simple event\\
+    2. List simple events in experiment and test that they can't be
+    decomposed. This is SS S.\\
+    3. Assign resonable probabilities to SP in S, making certain of the AoP.\\
+    4. Define event of interest, A, as a specific collection of
+    sample points. (all points where A occurs)\\
+    5. Find $ P(A) $ by summing probabilities of SP in A.
+\subsection{Tools for Counting SP}
+     $ P(A) = n_{a}/N $if N equiprobable SP and A contains $ n_{a} $ SP
+    \subsubsection{mn Rule Theorem}
+        with m ele a1tom and n ele b1ton, it is possible to form
+        $ mn = m \times n $ pairs containing one ele from each group.\\
+        See FIG2.9, example 2.7 \\
+        Follows with any number of sets (mnp)
+    \subsubsection{Definition of a Permutation}
+        an ordered arrangement of r distinct objects is a permutation.
+        the num of ways of ordering n distinct object taken r at a time
+        will be $ P^{n}_{r} $
+    \subsubsection{Permutation Theorem}
+        made with ex2.7 and mn rule then divided by N SP
+        \begin{align*}
+            P_{r}^{n} = n(n-1)(n-2)\cdots(n-r+1) = \frac{n!}{(n-r)!}
+        \end{align*}
+        returns the num of SP
+    \subsubsection{Partition Theorem}
+        num of ways partitioning n distinct objects into k distinct groups
+        containing n1tok objects, respectively, where each obj appearse
+        in exactly one group and $ \sum_{i= 1}^{k}n_{i} = n$ is
+        \begin{align*}
+            N = \begin{pmatrix}
+                n \\ n1tok
+            \end{pmatrix} =  \frac{n}{n_{1}!n_{2}!\cdots n_{k}!}
+        \end{align*}
+        the terms in the pmatrix are the multinomial coefficients 
+        bc they occur in the expansion of the multinomial y1tok to
+        the nth power.
+    \subsubsection{Definition of Combination}
+        (Special case of Partitioning) \\
+        num of combinations of n objects taken r at a time is 
+        the num of subsets, each of size r, that can be formed from the
+        n objects defined as $ C^{n}_{r}\text{ or } \begin{pmatrix}
+        n\\r\end{pmatrix}$
+    \subsubsection{Combination Theorem}
+        num of unordered subsets of size r chosen (WITHOUT REPLACEMENT) from
+        n available objects is 
+        \begin{align*}
+            \begin{pmatrix}
+                n\\r
+            \end{pmatrix}
+            = C_{r}^{n} = \frac{P_{r}^{n}}{r!} = \frac{n!}{r!(n-r)!} 
+        \end{align*}
+        $ \begin{pmatrix}n\\r\end{pmatrix} $ is referred to as binomial 
+        coefficients because they occur in the binomial expansion of
+        $ (x + y)^{n} $
+\subsection{Conditional Probability and Independence of Events}
+    \subsubsection{Definition of Conditional Probability}
+        conditional probability of an event A, given that an event B
+        has occured is
+        \begin{align*}
+            P(A|B) = \frac{P(A\cap B)}{P(B)} 
+        \end{align*}
+        provided $ P(B) > 0 $\\
+        SEE FIG2.1 and Explanation of 2.9
+    \subsubsection{Independence}
+        A, B are independent if any one are true:\\
+        $ P(A|B) = P(A) $\\
+        $ P(B|A) = P(B) $\\
+        $ P(A\cap B) = P(A)P(B) $
+        if none are true events are dependent
+\subsection{Two Laws of Probability}
+    \subsubsection{The Multiplicative Law of Probability}
+        (derived from conditional probability)
+        probability of intersection of A and B is
+        \begin{align*}
+            P(A\cap B) &=  P(A)P(B|A)\\
+                       &= P(B)P(A|B)
+        \end{align*}
+        if a and b are independent:
+        \begin{align*}
+            p(A\cap B) = P(A)P(B)
+        \end{align*}
+        can be extended to intersection of any number of events
+    \subsubsection{The Additive Law of Probability}
+        the P of the union of two events A and B is
+        \begin{align*}
+            P(A\cup B) = P(A) + P(B) - P(A\cap B)
+        \end{align*}
+        if ME ($ P(A\cap B) = 0 $), then
+        \begin{align*}
+            P(A\cup B) = P(A) + P(B)
+        \end{align*}
+        can be extended to more unions\\
+        "A or B"
+    \subsubsection{Not Theorem}
+        if A is an event:
+        \begin{align*}
+            P(A) = 1-P(\overline{A})
+        \end{align*}
+\subsection{The Event-Composition Method}
+    1. Define experiment\\
+    2. Visualize nature of SP \\
+    3. Write equation expressing the event of interest as a composition
+    of events (using unions, intersections, complements)\\
+    4. Apply two laws of probability to compositions to find $ P(A) $\\
+    see sum of a geometric series
+\subsection{The Law of Total Probability and Bayes' Rule}
+    give S as a union o ME subsets
+    \subsubsection{Definition of Partition}
+        for some positive int k, let the sets B1tok be:
+        1. $ S = B_{1}\cup B_{2}\cdot B_{k} $\\
+        2. $ B_{i}\cap B_{j} = \text{\O), for } i \ne j $\\
+        then the collection of sets B1tok is a partition of S
+    \subsubsection{The Law of Total Probability}
+        assume B1tok is a partition of S, such that 
+        $ P(B_{i}) > 0 $ for i1tok. then for any A:
+        \begin{align*}
+            P(A) = \sum_{i= 1}^{k}P(A|B_{i})P(B_{i})
+        \end{align*}
+    \subsubsection{Baye's Rule}
+        assume B1tok is a partition of S, such that
+        $ P(B_{i}) > 0 $ for i1tok. then
+        \begin{align*}
+            P(B_{j}|A) = \frac{P(A|B_{j})P(B_{j})}
+            { \sum_{i= 1}^{k}P(A|B_{i})P(B_{i}) }
+        \end{align*}
+        from definition of conditional probability and
+        law of total probability\\
+        see EX2.23 and FIG2.13
+\subsection{Numerical Events and Random Variables}
+    events of major interest identified by num is 
+    numerical events (NE?)
+    \subsubsection{Definition of a Random Variable}
+        RV: a real-valued function for which the domain is a SS.\\
+        random variables have random values 
+\subsection{Random Sampling}
+    statistical experiment involves observation of a sample
+    selected from a larger body of data called a population
+    \subsubsection{Two Methods of Sample Selection}
+        with replacement \\
+        without replacement\\
+        method of sampling: design of an experiment affects the information
+    \subsubsection{Random Sampling}
+        Let N and n represet num of ele in population and sample.
+        If sampling is conducted so that each of $ \begin{pmatrix}
+        N\\n\end{pmatrix}$ samples has an equal P of being selected, the
+        sampling is said to be random, and the result is a random sample.
+        
+
+        
+
+\end{document}
+

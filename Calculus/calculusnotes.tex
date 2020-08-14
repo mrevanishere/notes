@@ -1,0 +1,156 @@
+\documentclass[12pt]{book}%
+\usepackage{graphicx}%
+\usepackage{amsmath}%
+
+\begin{document}
+
+\title{Calculus Notes}
+\author{mrevanisworking}
+
+\setcounter{chapter}{4}
+\chapter{5 Integrals}
+\section{Definition}
+Reinmann Sum
+\begin{equation}
+   \int_a^bf(x)dx=\sum_{i=1}^nf(x_i^*)\Delta x 
+\end{equation}
+\subsection{Testing Ground}
+
+
+$\iint_{S} f(x,y) dA $   
+\setcounter{chapter}{14}
+\chapter{15 Multiple Integrals}
+\section{15.1,2,3 Double Integrals }
+
+$\sum_{i=1}^{n}f(x_i^*)\Delta x$\par
+Double Integral of $f$ over the rectangle $R$ is 
+\begin{equation}
+    \int_{R}^{} \int_{}^{}f(x,y)dA- \sum_{i=1}^{m} \sum_{j=1}^{n} f(x_{ij}^*,y_{ij}^*)\Delta A 
+\end{equation}
+if the limit exists.\par
+...
+\par
+\subsection{Definition of Double Integral}
+\begin{equation}
+    \int_{R} \int f(x,y)dA=\lim_{(m,n)\to\infty} \sum_{i=1}^{m} \sum_{j=1}^{n} f(x_{ij}^*y_{ij}^*)\Delta A
+\end{equation}
+iltc double reinmann sum\par
+precise definition\par...
+ 
+\subsection{Over Rectangle}
+\begin{equation}
+    \iint_R f(x,y)dA 
+\end{equation}
+
+\subsection{The Midpoint Rule}
+\begin{equation}
+    \iint_R f(x,y) dA \approx \sum_{i=1}^{m} \sum_{j=1}^{n} f(xover,yover)\Delta A
+\end{equation}
+
+\subsection{Fubini's Theorem}
+\begin{equation}
+    \iint_R f(x,y)dA= \int_{a}^{b} \int_{c}^{d} f(x,y) dydx \int_{c}^{d} \int_{a}^{b} f(x,y) dx dy
+\end{equation}
+\begin{equation}
+    \iint_R g(x)h(y)dA = \int_{a}^{b}g(x)dx \int_{c}^{d}h(y)dy \text{ where } R=[a,b]\times[c,d]
+\end{equation}
+Average Value of a function
+$f_{ave}= \frac{1}{A(R)} \iint_R f(x,y)dA$ 
+\subsection{Double Integral over General Region D}
+\begin{equation}
+    \iint_D f(x,y)dA=\iint_R F(x,y)dA
+\end{equation}
+Given D then
+\begin{equation}
+    D= \{(x,y) | a\le x\le b,g_1(x)\le y\le g_x(x)\}
+\end{equation}
+is
+\begin{equation}
+    \iint_D f(x,y)dA = \int_{c}^{d} \int_{h_1(y)}^{h_2(2)} f(x,y) dx dy
+\end{equation}
+and the opposite for y
+Subregions can be fixed by solving in terms of a variable
+\begin{equation}
+    \iint_D f(x,y)dA = \iint_{D_1} f(x,y)dA + \iint_{D_2} f(x,y)dA
+\end{equation}
+Double Integral of 1 is the Area of D:
+\begin{equation}
+    \iint_{D} 1dA=A(D)
+\end{equation}
+\subsection{Double Integrals in Polar Coordinates UNFIN}
+Polar Rectangle (disk or circle)
+$R=\{(r, \theta )|a\leq r\leq b,\alpha\leq \theta \leq\beta\}$  
+where $r^2=x^2+y^2 ,x=r \cos \theta ,y = \sin \theta    $
+
+
+\section{15.6,7,8 Triple Integrals} 
+\subsection{Definition}
+Triple integral of $f$  over box $B$  is (if the limit exists)
+\begin{equation}
+\iiint_B f(x,y,z)dV= \lim_{l,m,n\to \infty} \sum_{i=1}^{l} \sum_{j=1}^{m} \sum_{k=1}^{n} f(x_{ijk}^{*},y_{ijk}^{*},z_{ijk}^{*},)\Delta V
+\end{equation}
+Fubini's Theorem for Triple Integrals on rect box $B=[a,b]\times[c,d]\times[r,s]$ 
+\begin{equation}
+    \iiint_B f(x,y,z)dV= \int_{r}^{s} \int_{c}^{d} \int_{a}^{b} f(x,y,z) \,dx\,dy\,dz
+\end{equation}
+General region E
+\begin{equation}
+    \iiint_E f(x,y,z)dV= \iiint_B F(x,y,z) dV
+\end{equation}
+Triple Integral bounded by regions
+\begin{equation}
+    \iiint_B f(x,y,z)dV= \int_{a}^{b} \int_{g_1(x)}^{g_2(x)} \int_{u_1(x,y)}^{u_2(x,y)} f(x,y,z) \,dz\,dy\,dx
+\end{equation}
+where terms are switched around when switching orders. Should draw two diagrams. (1) of solid region E and (2) of its projection D onto the xy plane.
+\par
+3 types of regions. one depending on which dimension goes first
+\par
+\subsection{Cylindrical Coordinates}
+Represented by the ordered triple $(r, \theta ,z)$ where $r$  and $ \theta $  are polar coords to P on x,y and z is distance from P.
+\begin{equation}
+    x=r \cos \theta ,y=r \sin \theta ,z=z,,,r^2=x^2+y^2, \tan \theta = \frac{y}{x},z=z
+\end{equation}
+Formula for triple integration in cylindrical coordiantes
+\begin{equation}
+    \iiint_E f(x,y,z)dV= \int_{\alpha}^{\beta} \int_{h_1(x)}^{h_2(x)} \int_{u_1(r \cos \theta ,r \sin \theta )}^{u_2(r \cos \theta ,r \sin \theta )} f(r \cos \theta ,r \sin \theta ,z) r\,dz\,dr\,d\theta 
+\end{equation}
+
+\subsection{Spherical Coordinates}
+\begin{equation}
+    x=\rho \sin \phi cos \theta, y=\rho \sin \phi \sin \theta ,z=\rho \cos \phi,,,\rho^2=x^2+y^2+z^2
+\end{equation}
+the counterpart of a rectangular box is a spherical wedge.
+\par B is the unit ball.
+
+\section{15.9 Change of Variables in Multiple Integrals } 
+
+Transformation T from the uv-plane to xy-plane: $T(u,v)=(x,y)$
+where $x=g(u,v), y=h(u,v)$ 
+assuming that T is a $C^1$ transformation (g, h have continuous FOPD) 
+\par  
+\subsection{Vectors and Jacobian}
+Position vector of image
+\begin{equation}
+    \vec r(u,v) = g(u,v) \hat i+h(u,v) \hat j 
+\end{equation}
+The Jacobian
+\begin{equation}
+    \frac{\partial(x,y)}{\partial(u,v)}=\begin{vmatrix}\end{vmatrix}
+\end{equation}
+\subsection{Change of Variables Theorem}
+
+\section{Applications}
+\subsection{}
+\subsection{15.4, 15.5 Applications and Surface Area} 
+\subsection {15.6 applications of triple integrals}
+Special Case where $f(x,y,z)=1$  for all E then the TI is the volume of E
+\begin{equation}
+    V(E)=\iiint_E dV
+\end{equation}
+For density function, the triple integral is mass. It's moments are the triple integral times a dimension...physics stuff.
+\par There is also probability (joint desnity function)
+\begin{equation}
+    P((X,Y,Z)\in E)=\iiint_E f(x,y,z)dV
+\end{equation}
+
+\end{document}

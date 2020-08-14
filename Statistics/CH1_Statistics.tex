@@ -1,0 +1,69 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+%\usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{bm}
+
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+%\allowdisplaybreak
+\begin{document}
+\title{CH 1 What is Stats}
+\author{mrevanisworking}
+\maketitle
+
+\subsection{Statistics Terminology}
+    \subsubsection{Stats Def}
+    "The objective of statistics is to make an inference about a population based on
+    information contained in a simple form that population and to
+    provide an associated measure of goodness for the inference."
+    \subsubsection{Stats Goal}
+        1. Identify population of interest (who studying). \\
+        2. inferential objective (what want to know).\\
+        3. How to collect data
+\subsection{Graphical Methods}
+    For Graphs: points of subdivision should be chosen so that measurements 
+    cannot be on the point of division. 5-20 intervals is good.
+    \par
+    we should learn py while reading these next few textbooks. true.
+    \par
+    We use Numerical Descriptive Measures to describe data. There are measures of central
+    tendency and measures of variation.
+\subsection{Numerical Methods}
+    \subsubsection{Mean}
+        \begin{equation}
+            \bar y= \frac{1}{n} \sum_{i=1}^{n} y_i
+        \end{equation}
+        where $\bar y$  is a mean of a sample n. The populatio mean is $ \mu  $
+    \subsubsection{Variance}
+        Variance: sum of square of differences between measurements
+        and mean over (n-1)
+        \begin{equation}
+            s ^{2} = \frac{1}{n-1} \sum_{i=1}^{n}(y _{i} - \bar y) ^{2}
+        \end{equation}
+    \subsubsection{Standard Deviation}
+        SD is the positive 2root of variance:
+        \begin{equation}
+            s=\sqrt{s^{2}}
+        \end{equation}
+        the corresponding population SD is denoted by:
+        $ \sigma = \sqrt{\sigma ^2 }  $ \\
+        used for a single set of measurements
+    \subsubsection{Empirical Rule}
+        For a dist of measurements that is approx normal, it follows that
+        the interval with end points:
+        $ \mu \pm \sigma  $ contains ~68\% of measurements\\
+        $ \mu \pm 2\sigma  $ contains ~95\% of measurements \\
+        $ \mu = 3\sigma  $ contains almost all of the measurements
+\subsection{Inferences}
+    Assumptions cannot be definite from small fractions of a population\\
+    Probabilists assume they know the structure of the PoI
+    and use theory to compute.\\
+    Staticians use sample then probability.
+
+\end{document}  
