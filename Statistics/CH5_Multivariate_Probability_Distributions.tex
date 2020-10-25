@@ -138,7 +138,74 @@
 		is a NN fxn of $ y_2 $ alone\\
 		Key benefit of this theorem: do not need to derive the 
 		marginal densities
-
+\subsection{The Expected Value of a Fxn of RV}
+	\subsubsection{Definition of Expected Value of Fxn of RV}
+		Let g(Y1toK) be a fxn of DRV, Y1tok, which have a P fxn
+		p(y1tok). Then the EV of g(Y1tok) is
+		\begin{align*}
+			E[g(Y1tok)] = \sum_{\text{all}ykto1}g(y1tok)p(y1tok)
+		\end{align*}
+		If Y1tok are CRV w/ JPDF f(y1tok) then:
+		\begin{align*}
+			E[g(Y1tok)] = \int_{-\infty }^{\infty }\cdots\int_{-\infty }
+			^{\infty }\int_{-\infty }^{\infty }g(y1, y2, \dots , y_k)
+			\times f(y1tok)dy1t0k
+		\end{align*}
+\subsection{Special Theorem}
+	\subsubsection{EV of a Constant Theorem}
+		\begin{align*}
+			E(c) = c
+		\end{align*}
+	\subsubsection{Scalar Multiplication EV Theorem}
+		Let g(Y1, Y2) be a fxn of the RV Y1 and Y2. then
+		\begin{align*}
+			E[cg(Y_1, Y_2)] = cE[g(Y_1, Y_2)]
+		\end{align*}
+	\subsubsection{Addition EV Theorem}
+		Let Y1 and Y2 be RV and  g1tok(Y1,Y2) be fxns of Y1 and Y2
+		\begin{align*}
+			E[g_{1tok}(Y_1, Y_2)] = E[g_{1tok}(Y_1, Y_2)]
+		\end{align*}
+	\subsubsection{Independent RV EV Fxn Theorem}
+		Let Y1 and Y2 be independent RV and g(Y1) and h(Y2) be fxns
+		\begin{align*}
+			E[g(Y_1)h(Y_2)] = E[g(Y_1)]E[h(Y_2)]
+		\end{align*}
+		provided expectations exist
+\subsection{The Covariance of Two Random Variables}
+	Dependence has two measures: covariance and correlation\\
+	Covariance is the avg val of the EV fo the product of deviances
+	\subsubsection{Definition of Covariance}
+		If Y1 and Y2 are RV w/ means $ \mu_1, \mu_2 $, the covariance
+		of Y1 and Y2
+		\begin{align*}
+			\text{Cov}(Y_1, Y_2) = E[(Y_1 - \mu_1)(Y_2 - \mu_2)]
+		\end{align*}
+		larger the abs val of Cov, the greater linear dependence between
+		Y1 and Y2. \\
+		Positive: Y1 increases as Y2 increases\\
+		Negative: Y1 decreases as Y2 increases\\
+		Zero: uncorrelated
+	\subsubsection{Correlation Coefficient}
+		\begin{align*}
+			\rho = (\text{Cov}\frac{Y_1, Y_2}{\sigma_1\sigma_2})
+		\end{align*}
+		Sign of the correlation coefficient is the same as the sign of the 
+		Cov
+	\subsubsection{Computation of Cov Theorem}
+		If Y1 and Y2 are RV w/ means $ \mu_1, \mu_2 $
+		\begin{align*}
+			\text{Cov}(Y_1, Y_2) = E[(Y_1 - \sigma_1)(Y_2 - \sigma_2)] = 
+			E(Y_1Y_2) - E(Y_1)E(Y_2)
+		\end{align*}
+	\subsubsection{Independence Cov Theorem}
+		IF Y1 and Y2 and independent RV
+		\begin{align*}
+			\text{Cov}(Y_1, Y_2) = 0
+		\end{align*}
+		Independent RV must be uncorrelated\\
+		CONVERSE: if the Cov is zero, the variables need not be independent
+\subsection{The EV and Variance of Linear Fxns of RV}
 
 
 \end{document}

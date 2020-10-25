@@ -1,0 +1,94 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+%\usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{bm}
+\usepackage{empheq}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+
+%allowdisplaybreak
+\begin{document}
+\title{CH 6 Complex Numbers}
+\author{mrevanishere}
+\maketitle
+
+
+\section{Intro}
+	i is $ i^2 = -1 $.\\
+	A complex number is $ z = a+bi $,
+	where the real part is $ a= Re(z) $ and the imaginary part is
+	$ b= Im(z) $\\
+	Addition and multiplication is defined for complex nums (39)
+	\begin{align*}
+		\frac{1-i}{1+i} &= -i 
+	\end{align*}
+	$ \C $ is the set of all complex numbers \\
+	$ \R \subseteq C $ \\
+	for quadratics:\\
+	if $ b^2 \ge 4ac $ then $ \in\R $,\\
+	if $ b^2 \le 4ac $ then $ \in\C $
+\section{Geometry}
+	Complex conjugate of $ z= a+bi $ is defined as:\\
+	$ \overline{z} = a-bi $ (reflected over real axis) \\
+	Modulus of z is distance from the origin to z (|z|)
+	$ z \overline{z} = |z|^2 $ \\
+	Argument of z is the angle $ \theta $ \\
+	Polar form of z: $ z= r(\cos\theta +i\sin\theta) $ \\
+	where $ a= r\cos\theta $ and $ b= r\sin\theta $ and $ |z| = r $\\
+	Principal argument is in $ -\pi < \theta \le \pi $ written as 
+	$ arg(z) $, because multiples of 2pi are same angle\\
+	Ex $ arg(1-i) = -\frac{\pi}{4} $
+\section{De Moivre's Theorem}
+	Complex plane or argand diagram\\
+	If $ z_1 = r_1(\cos\theta_1 + i\sin\theta_1) $ and
+	If $ z_2 = r_2(\cos\theta_2 + i\sin\theta_2) $
+	Then $ z_1z_2 $ has mmodulus $ r_1r_2 $ and arugment $ \theta_1\theta_2 $\\
+    Says: mult a C z by $ \cos\theta + i\sin\theta $ ROTATES z 
+	counterclockwise through the angle $ \theta $ \\
+	Ex: multipliciation by i rotates $ \frac{pi}{2} $
+	\subsection{Prop 6.1}
+		Let $ z= r(\cos\theta+i\sin\theta) $ and let n be a pos int:
+		\begin{align*}
+			(i) z^n &=  r^n(\cos n\theta +i\sin n\theta) \\
+			(ii) z^{-n} &= r^{-n}(\cos n\theta - i\sin n\theta)
+		\end{align*}
+\section{The $ e^{i\theta} $ Notation }
+	$ e^{i\theta} = \cos\theta + i\sin\theta $ \\
+	Common:
+	\begin{align*}
+		e^{2\pi i} &= 1 \\
+		e^{\pi i} &= -1 \\
+		e^{\frac{pi}{2} i} &=  i \\
+		e^{\frac{pi}{4} i} &= \frac{1}{\sqrt{2}}(1+i)
+		e^{i\theta} &=  e^{i(\theta +2k\pi)}
+	\end{align*}
+	all $ e^{i\theta} $ has modulus 1 (unit circle) \\
+	$ z= re^{i\theta} $ where $ r = |z| $ and $ \theta = arg(z) $
+	\begin{align*}
+		e^{i\theta}e^{i\phi} &= e^{i(\theta + \phi)}	\\
+		(e^{i\theta})n &= e^{in\theta}
+	\end{align*}
+\section{Roots of Unity}
+	cube roots of unity are each $ \frac{2\pi}{3} $ away from eachother \\
+	nth Roots of unity: if n is a pos int, then the complex nums that 
+	satisfy the equation are:
+	\begin{align*}
+		z^{n} &= 1
+	\end{align*}
+	\subsection{Prop 6.3}
+		Let n be a pos int and $ w := e^{\frac{2\pi i}{n} } $ Then the
+		nth roots of unity are the n complex nums:
+		\begin{align*}
+			1,w,w^2,...,w^{n-1}
+		\end{align*}
+		and are evenly spaced around the unit circle
+\end{document}
