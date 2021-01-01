@@ -1,0 +1,112 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+%\usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{bm}
+\usepackage{empheq}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+
+%allowdisplaybreak
+\begin{document}
+\title{CH 16 Counting and Choosing}
+\author{mrevanishere}
+\maketitle
+
+
+\section{Multiplication Principle}
+	THEOREM 16.1 (Multiplication Principle): Let P be a process which 
+	consists of n stages, and suppose that for each r, the rth stage
+	can be carried out in $ a_r $ ways. Then P can be carried out
+	in $ a1-n $ ways.\\
+	PROPOSITION 16.1: Let S be a set consisting of n ele. Then the num
+	of different arrangements of the elements of S in order is n!
+	\begin{align*}
+		S &= {a, b, c} \\
+		abc, acb, bac, bca, cab, cba
+	\end{align*}
+\section{Binomial Coefficients}
+	DEFINITION: Let n be a positive int and r an int such that 
+	$ 0 \le r \le n $ Define
+	\begin{align*}
+		\begin{pmatrix} n \\ r \end{pmatrix}
+	\end{align*}
+	("n choose r") to be the num of r-element subsets of $ {1,,,n} $ \\
+	PROPOSITION 16.2:
+	\begin{align*}
+		\begin{pmatrix} n \\ r \end{pmatrix} &= 
+		\frac{n!}{r!(n-r)!} 
+	\end{align*}
+	from proof:
+	\begin{align*}
+		n! &= \begin{pmatrix} n \\ r \end{pmatrix} \times r! \times (n-r)!
+	\end{align*}
+	nC0 and nCn = 1 and nC1 = n. \\
+	nCr are binomial coefficients from:
+\section{Binomial Thoerem}
+	THEOREM 16.2 (Binomial Theorem): Let n be a pos int, and let
+	a, b be real nums. Then:
+	\begin{align*}
+		(a + b)^n &= \sum_{r=0}^n \begin{pmatrix} n \\ r \end{pmatrix}
+		a^{n-r}b^r \\
+		&= a^n + na^{n-1}b + .... see expansion
+	\end{align*}
+	1. Each expression is symmetrical about the centre:
+	\begin{align*}
+		\begin{pmatrix} n \\ r \end{pmatrix} &= 
+		\begin{pmatrix} n \\ n-r \end{pmatrix}
+	\end{align*}
+	and from pascal's triangle:
+	\begin{align*}
+		\begin{pmatrix} n+1 \\ r \end{pmatrix} &= 
+		\begin{pmatrix} n \\ r \end{pmatrix} +
+		\begin{pmatrix} n \\ r-1 \end{pmatrix}
+	\end{align*}
+	PROPOSITION 16.3: For any pos int n
+	\begin{align*}
+		(1 + x)^n &= \sum_{r=0}^n \begin{pmatrix} n \\ r \end{pmatrix} x^r
+	\end{align*}
+	see 138.
+\section{Ordered Selections}
+	PROPOSITION 16.4: Let S be a set of ele \\
+	(1) The num of ordered selections of r ele of S, allowing repetitions
+	is equal to $ n^r $ \\
+	(2) The number of ordered selections of r distinct ele of S is equal
+	to $ n(n-1) \cdots (n-r+1) $ \\
+	Written as $ P(n, r) = \frac{n!}{(n-r)!} = r! 	\begin{pmatrix} n \\ r \end{pmatrix} $ 
+\section{Multinomial Coefficients}
+	DEFINITION (Ordered Partition): Let n be a pos int, and let
+	$ S = {1,,,n} $. A partition of S is a collection of subsets
+	S1-k such that each ele of S lies in exactly one of these subsets.
+	The partition is ordered if we take account of the order in which the
+	subsets are written. \\
+	see 140, 141 \\
+	PROPOSITION 16.5:
+	\begin{align*}
+			\begin{pmatrix} n \\ r1-k \end{pmatrix} &= 
+			\frac{n!}{r_1!r_2!...r_k!} 
+	\end{align*}
+	Mult princ: $ n! = 	\begin{pmatrix} n \\ r1-k \end{pmatrix} r_1!r_2!...r_k! $\\
+	These are called multinomial coefficients \\
+	THEOREM 16.3 (Multinomial Theorem): Let n be a pos int, and let
+	x1-k be real numbers. Then the expansion of
+	$ (x_1 + \cdots + x_k)^n $ is the sum of all terms of:
+	\begin{align*}
+			\begin{pmatrix} n \\ r1-k \end{pmatrix} x_1^{r_1}...x_k^{r_k}
+	\end{align*}
+	where r1-k are nn int such that their sum = n.
+
+
+
+
+
+
+\end{document}

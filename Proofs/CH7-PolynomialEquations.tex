@@ -29,7 +29,38 @@
 	2nd degree root: quadratic formula \\
 	3rd degree root:
 \section{Solution of Cubic Equations}
-	HELP<<<<<
+	Consider $ x^3  + ax^2 + bx + c = 0 $ \\
+	Get rid of $ x^2 $. By $ y = x+\frac{a}{3} $. \\
+	Then $ y^3  =  (x +\frac{a}{3)})^3 = $
+	$ x^3 + ax^2 + \frac{a^2}{3}x + \frac{a^3}{27} $. \\
+	So it becomes $ y^3 + b'y + c' = 0 $ from some b' c' written as:\\
+	$ y^3 + 3hy +k =0 $ \\
+	Write $ y = u + v $ Then:
+	\begin{align*}
+		y^3 = (u+v)^3 &=  u^3 + v^3 + 3u^2v + 3uv^2 \\
+					  &=  u^3 + v^3 + 3uv(u+v) \\
+					  &= u^3 + v^3 + 3uvy
+		y^3 - 3uvy - (u^3 + v^3) &= 0
+	\end{align*}
+	Which has $ u+v $ as a root \\
+	Find u, v that: \\
+	$ h = -uv, k = -(u^3 + v^3) $ \\
+	$ v^3 = -\frac{h^3}{u^3}, u^3 - \frac{h^3}{u^3} = -k $, so
+	\begin{align*}
+		u^6 + ku^3 -h^3 = 0
+	\end{align*}
+	This is the quadratic equation
+	\begin{align*}
+		u^3 =  \frac{1}{2}(-k +\sqrt{^2 + 4h^3})
+	\end{align*}
+	\begin{align*}
+		v^3 =  -k-u^3 = \frac{1}{2}(-k-\sqrt{kk^2+4h^3})
+	\end{align*}
+	Plug back into $ y= u+v $
+	\begin{align*}
+	\sqrt[3]{\frac{1}{2}(-k+\sqrt{k^2+4h^3} )} + 
+		\sqrt[3]{\frac{1}{2}(-k-\sqrt{k^2+4h^3} )}
+	\end{align*}
 \section{Higher Degrees}
 	There are no formulas for roots of >4th degree equations
 \section{The Fundamental Theorem of Algebra}
@@ -52,11 +83,8 @@
 	sum of the roots, $ s_2 $ denotes the sum of all the products
 	of pairs of roots,...
 	\begin{align*}
-		s_n &= \alpha_1\alpha_2\dots\alpha_n &= (-1)^{n}a_0
+		s_n &= \alpha_1 \alpha_2 \dots \alpha_n \\
+			&= (-1)^{n}a_0
 	\end{align*}
 	see 56/57
-
-
-
-
 \end{document}

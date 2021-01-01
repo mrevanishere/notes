@@ -1,0 +1,97 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+%\usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{bm}
+\usepackage{empheq}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+
+%allowdisplaybreak
+\begin{document}
+\title{CH 19 Functions}
+\author{mrevanishere}
+\maketitle
+
+
+\section{Function}
+	DEFINITION (Function): Let S and T be sets. A function from S to T is a rule that
+	assigns to each $ s\in S $ a single ele of T, denoted by $ f(s) $. We
+	write
+	\begin{align*}
+		f: S \to T
+	\end{align*}
+	to mean that f is a funtion from S to T. If $ f(s) = t $, we often say
+	f sends $ s \to t $.\\
+	DEFINITION (Image): iIf $ f: S \to T $ is a function, the image of f
+	is the set of all ele of T that are equal to $ f(s) $ for some
+	$ s\in S $. We write $ f(S) $ for the image of f. Thus
+	\begin{align*}
+		f(S) = {f(s)|s\in S}
+	\end{align*}
+	example
+\section{Important Functions}
+	(I) We say f is onto if the image $ f(S) = T $; if for every $ t \in T $
+	there exists $ s \in S $ such that $ f(s) = t $ \\
+	(II) We say f is one-to-one if whenever $ s_1, s_2 \in S $ with
+	$ s_1 \ne s_2 $, then $ f(s_1) \ne f(s_2) $; f is 1-1 if f sends different
+	elements of S to different elements of T. Or for all $ s_1, s_2 \in S $
+	\begin{align*}
+		f(s_1) = f(s_2) \Rightarrow s_1 = s_2
+	\end{align*}
+	(III) We say that f is a bijection if f is both onto and 1-1 \\
+	onto or surjective functions or surjections \\
+	1-1 or injective functions or injections \\
+	PROPOSITION 19.1: Let $ f:S \to T $ be a function, where S and T
+	are finite sets. \\
+	(i) If f is onto, then $ |S| \ge |T| $. \\
+	(ii) If f is 1-1, then $ |S| \le |T| $. \\
+	(iii) If f is a bijection, then $ |S| = |T| $.
+\section{Pigeonhole Principle}
+	If we put n+1 or more pigeons into n pigeonholes, then there must be a 
+	pigeonhole containing more than one pigeon.
+\section{Inverse Functions}
+	DEFINITION: Let $ f: S \to T $ be a bijection. The inverse funciton of 
+	f is the function from $ T \to S $ that sends each $ t \in T $ to the 
+	unique $ s \in S $ such that $ f(s) = t $. We denote the
+	inverse function by $ f^{-1}: T \to S $. Thus, for
+	$ s \in S, t \in T $,
+	\begin{align*}
+		f^{-1}(t) &=  s \Leftrightarrow f(s) &=  t \\
+		f^{-1}(f(s)) &=  s \text{ and } f(f^{-1}(t)) &= t
+	\end{align*}
+\section{Composition of Functions}
+	DEFINITION: Let S, T, U be sets, and let $ f: S \to T $ and
+	$ g: T \to U $ be functions. The composition of f and g is the function
+	$ g \circ f: S \to U $, which is defined:
+	\begin{align*}
+		(g \circ f)(s) = g(f(s)) \text{ for all } s \in S
+	\end{align*}
+	Identity functions:
+	\begin{align*}
+		f^{-1} \circ f = \iota_S, f \circ f^{-1} = \iota_T
+	\end{align*}
+	PROPOSITION 19.2: Let S, T, U be setse, and let $ f: S \to T $ and
+	$ g: T \to U $ be functions. Then: \\
+	(i) if f and g are both 1-1, so is $ g \circ f $ \\
+	(ii) if f and g are both onto, so is $ g \circ f $ \\
+	(iii) if f ang g are both bijections, so is $ g \circ f $.
+\section{Counting Functions}
+	PROPOSITION 19.3: Let S, T be finite sets, with
+	$ |S|=m, |T|=n $. Then the num of functions from S to T is equal to 
+	$ n^m $.
+	
+
+
+
+
+
+\end{document}	

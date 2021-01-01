@@ -1,0 +1,184 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+%\usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{bm}
+\usepackage{empheq}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\uu}{\overline}
+
+%allowdisplaybreak
+\begin{document}
+\title{120AB Study Guide}
+\author{mrevanishere}
+\maketitle
+
+\section{Notation}
+Note: finite or countably infinite is just countable (see infinities in proofsbook)\\
+Notation: uppercase letter such as Y to denote an rv and a lowercase letter such as 
+y to denote a particular value of that rv. \\
+$ (Y = y) $ is the set of all points in S assigned to the value y by rv Y.\\
+$ P(Y=y) $ is the probability that Y takes on the value y, defined as the 
+sum of th proba of all sp in S that are assigned to value y. sometimes denoted by
+$ p(y) $ \\
+...
+\section{Probability}
+	DeMorgan's Laws: $ \uu{A \cap B} = \uu{A} \cup \uu{B}   $ and
+	$ \uu{A \cup B} = \uu{A} \cap \uu{B} $ \\
+	Distributive laws:
+	\begin{align*}
+		A \cap (B \cup C) &= (A \cap B) \cup (A \cap C) \\
+		A \cup (B \cap C) &= (A \cup B) \cap (A \cup C) \\
+	\end{align*}
+	Experiment: process by which observation is made \\
+	Event: E (simplest possible outcome) \\
+	SS (Sample Space): set of all possible sample points (sp) S of an experiment \\
+	dss (Discrete Sample Space): contains either a countable number of distinct sp \\
+	Mutually exclusive (ME) sets are ME events. \\
+	Compound Events: unions of sets of sp of simple events \\
+	A simple event $ E_i $ is included in event A iff A occurs whenever $ E_i $ occurs. \\
+	Event (dss): collection of sample points (any subset of S) \\
+	Relative Frequency Definition 2.6: \\
+		S is an SS with an experiment. To every event A in S a number P(A)
+		the probability of A such that:
+		\begin{align*}
+			\text{ Axiom 1: }& P(A) \ge 0 \\
+			\text{ Axiom 2: }& P(S) = 1 \\
+			\text{ Axiom 3: }& \text{If } A_{1-...} 
+			\text{ form a sequence of pairwise ME events in S } \\
+			(A_i \cap  A_j = \emptyset, if i \ne j) then \\
+			P(A_1 \cap A_2 \cap A_3 \cup ...) &j \sum^{\infty}_{i=1}P(A_i)
+		\end{align*}
+	Sample-Point Method (2.5)\\
+	1. \\
+	2. \\
+	3. \\
+	4. \\
+	5. \\
+	Multiplication Principle (Fundamental Rule of Counting) (mn rule) \\
+	Permutations:
+	\begin{align*}
+		P^n_r = P(n,r) = seeproofsbook = \frac{n!}{(n-r)!} \\
+	\end{align*}
+	Partitions: n objects into k groups containing n1-k objects where each
+	object appears exactly in one group $ \sum^k_{i=1}n_i = n $ is
+	\begin{align*}
+		N = \begin{pmatrix} n \\ n1-k \end{pmatrix} = \frac{n!}{n1-k!} 
+	\end{align*}
+	see multinomials (2.6)\\
+	Combinations: n choose r
+	\begin{align*}
+		C^n_r = \begin{pmatrix} n \\ r \end{pmatrix} = \frac{P^n_r}{r!} = \frac{n!}{r!(n-r)!} 
+	\end{align*}
+	Bayes' Theorem ()Conditional Probability (2.7)): probability of A given B
+	\begin{align*}
+		P(A|B) &= \frac{P(A \cap B)}{P(B)}
+	\end{align*}
+	Independent Events: iff
+	\begin{align*}
+		P(A|B) &= P(A) \\
+		P(B|A) &= P(B) \\
+		P(A \cap B ) &= P(A)P(B) \\
+	\end{align*}
+	Multiplicative Law of Probability: intersection of events (and)
+	\begin{align*}
+		P(A \cup B) &= P(A)P(B|A) \\
+				 &= P(B)P(A|B) \\
+		\text{ if independent } P(A \cap B) &= P(A)P(B)
+	\end{align*}
+	Additive Law of Probability: The probability of the union of two events A and B is
+	\begin{align*}
+		P(A \cup B) &= P(A) + P(B) - P(A \cap B) \\
+		\text{ ME events } P(A \cup B) = P(A) + P(B)
+	\end{align*}
+	$ P(A) = 1 - P(\uu{A}) $ \\
+	Event Composition: \\
+	1. \\
+	2. \\
+	3. \\
+	4. \\
+	(HELP) Law of Total Probability (2.10): For some pos int k, let the sets $ B_{1-k} $ be
+	such that \\
+	1. $ S = B_1 \cup .... \cup B_k $ \\
+	2. $ B_i \cap B_j = \emptyset  $, for $ i \ne j $. \\
+	Then the collection $ B_{1-k} $ is a partition of S. \\
+	such that $ P(B_i) > 0 $, for $ i = 1-k $ Then for any event A:
+	\begin{align*}
+		P(A) = \sum_{i=1}^k P(A|B_i)P(B_i)
+	\end{align*}
+	rv (Random Variable): real-valued function for which the domain is a SS. \\
+	Population: larger body of data where samples are taken from \\
+	(HELP) Replacement: \\
+	srs (simple random sampling): N and n is population and sample. A ssrs is 
+	each of the $ \begin{pmatrix} N \\ n \end{pmatrix} $ samples has an equal probability of 
+	being selected, the sampling is said to be random. 
+\section{Discrete}
+	Discrete - rv Y is discrete if can assume a countable number of distinct values \\
+	pd (Probability Distribution) - collection of probabilities \\
+	Probability Function for Y - $ p(y) $ \\
+	pd for drv Y that shows $ p(y) $ for all y. Must be: \\
+	1. $ 0 \le p(y) \le 1 $ for all y \\
+	2. $ \sum_y p(y) = 1 $, where summation is over all y with nonzero $ p(y) $.\\
+	params (Parameters) - numerical descriptive measures for $ p(y) $. \\
+	ev (Expected Value) for drv:
+	\begin{align*}
+		E(Y) = \sum_y yp(y)
+	\end{align*}
+	if $ p(y) $ is accurate of population frequency distribution then
+	$ E(Y) = \mu $ the population mean. \\
+	ev of g(Y) a real-valued funciton of Y:
+	\begin{align*}
+		E[g(Y)] = \sum_{\text{ all } y }g(y)p(y)
+	\end{align*}
+	variance of a drv Y with mean $ E(Y) = \mu $: the ev of $ (Y-\mu)^2 $:
+	\begin{align*}
+		V(Y) = E[(Y-\mu)^2] \\
+	\end{align*}
+	sd of drv Y: positive square root of V(Y) \\
+	if p(y) is accurate for population then $ V(Y) = \sigma^2 $, sd is $ \sigma $. \\
+	Theorems (closed under addition and scalar multiplication):
+	\begin{align*}
+		E(c) &= c \\
+		E[cg(Y)] &= cE[g(Y)] \\
+		E[g_1(Y)+...+g_k(Y)] &= E[g_1(Y)] + ... + E(g_k(Y)]) \\
+		V(Y) = \sigma^2 = E[(Y-\mu)^2] =  E(Y^2) - \mu^2 \\
+	\end{align*}
+	\subsection{binomial pd}
+		...
+	\subsection{geometric pd}
+		...
+
+
+\section{Continuous}
+\section{Multivariate}
+\section{Functions}
+\section{Sampling Distributions}
+\section{Estimation}
+\section{Estimators}
+\section{Hypothesis Testing}
+
+
+
+
+
+	
+
+
+
+\section{2.3}
+	\subsection{}
+
+
+
+
+
+\end{document}

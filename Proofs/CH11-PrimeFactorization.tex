@@ -1,0 +1,68 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+%\usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{bm}
+\usepackage{empheq}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+
+%allowdisplaybreak
+\begin{document}
+\title{CH 11 Prime Factorization}
+\author{mrevanishere}
+\maketitle
+
+\section{The Fundamental Theorem of Arithmetic}
+	Theorem 11.1 (FTA): \\
+	Let n be an integer with $ n \ge 2 $\\
+	(I) Then n is equal to a product of prime numbers:
+	\begin{align*}
+		n &= p1*k
+	\end{align*}
+	where p1-k are primes and $ p1 \le k $ \\
+	(II) This prime factorizaiton of n is unique: 
+	\begin{align*}
+		n &=  p1*k &= q1*l
+	\end{align*}
+	where p, q are all prime and p1<k, q1<k then
+	\begin{align*}
+		k = l \text{and} p_i = q_i \text{for all} i = 1-k
+	\end{align*}
+\section{Consequences of the Fundamental Theorem}
+	Proposition 11.1 (Divisible)\\
+	Let $ n = p_{1-m}^{a_{1-m}} $ where the $ p_i $ are prime
+	p1<m and the $ a_i $ are pos int. If m divides n, then
+	\begin{align*}
+		m = p_{1-m}^{b1-m} \text{with} 0 \le b_i \le a_i \text{for all} i
+	\end{align*}
+	Proposition 11.2 (LCM) \\
+	Let $ a, b \ge 2 $ be integers with prime factorizations
+	\begin{align*}
+		a = p_{1-m}^{r1-m}, b = p_{1-m}^{s1-m}
+	\end{align*}
+	where the $ p_i $ are disinct primes and all $ r_i, s_i \ge 0 $ Then\\
+	(i) $ hcf(a, b) = p_{1-m}^{min(r1-m, s1-m)} $ \\
+	(ii) $ lcm(a, b) = p_{1-m}^{max(r1-m, s1-m)} $ \\
+	(iii)$ lcm(a, b) = \frac{ab}{hcf(a, b)} $ \\
+	Proposition 11.3 (Perfect Squares are rational) \\
+	Let n be a pos int. Then $ \sqrt{n}  $ is rational \iff  n is a 
+	perfect square ($ n = m^2 $ for some int m) \\
+	Proposition 11.4 (Pythag and higher)\\
+	Let a and b be pos ints that are coprime to eachother \\
+	(a) if ab is a square, then both a and b are also squares. \\
+	(b) Generally, if ab is an nth power (for some pos int n) then
+	both a and b are also nth powers \\
+	See Diphantine equation (solutions required to be integers)
+
+
+
+\end{document}

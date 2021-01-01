@@ -1,0 +1,76 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+%\usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{bm}
+\usepackage{empheq}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+
+%allowdisplaybreak
+\begin{document}
+\title{CH 8 - Induction}
+\author{mrevanishere}
+\maketitle
+
+
+\section{Principle of Mathematical Induction}
+	Suppose that for each positive integer n we have a statement $ P(n) $.
+	If we prove the following two things: \\
+	$ (a) P(1)$ is true;\\
+	$ (b) $ for all n, if $ P(n) $ is true then $ P(n+1) $ is also true;\\
+	then $ P(n) $ is true for all positive integers n 
+\section{Principle of Mathematical Induction 2}
+	Let k be an integer. Suppose that for each integer $ n \ge k $ we have a 
+	statement $ P(n) $. If we prove that following two things:\\
+	(a) $ P(k) $ is true; \\
+	(b) for all $ n \ge k $, if $ P(n) $ is true then $ P(n+1) $ is also true;\\
+	then $ P(n) $ is true for all integers $ n \ge k $.
+\section{Factorial}
+	n factorial is defined as:\\
+	$ n! = n(n-1)(n-2)...3\cdot 2\cdot 1 $ \\
+	$ 0! = 1 $
+\section{Guesswork}
+	Some problems have to use guesswork to identify a pattern first.
+\section{Summation Notation}
+	If f1-n are numbers we abbreviate the sum of all of them by
+	\begin{align*}
+		f1 + ...+fn &= \sum^{n}_{r=1}f_r
+	\end{align*}
+	Some summation algebra:
+	\begin{align*}
+		\sum^n_{r=1}(af_r + bg_r +c) &= 
+		a\sum^n_{r=1}f_r +b\sum^n_{r=1}g_r + cn
+	\end{align*}
+\section{Geometric Examples}
+	see later
+\section{Prime Factorization}
+	Definition: a prime number is a positive integer p such that $ p \ge 2 $
+	and the only positive integers diving p are 1 and p.\\
+	Proposition 8.1 (Prime facorization):\\
+	Every positive int greater than 1 is equal to a product of prime numbers.
+\section{Principle of Strong Mathematical Induction}
+	Suppose that for each integer $ n\ge k $ we have a statement $ P(n) $.
+	If we prove the following two things: \\
+	(a) $ P(k) $ is true;\\
+	(b) for all n, if $ P(k), P(k+1),...,P(n) $ are all true, then $ P(n+1) $
+	is also true \\
+	then P(n) is true for all $ n\ge k $.
+\section{Cauchy's Inequality: Proposition 8.2}
+	Let n be a positive integer. Then for any real numbers a1-n and b1-n:
+	\begin{align*}
+		sum a_1b_1 to a_nb_n &\le \sqrt{a_1^2+...+a_n^2} \sqrt{b_1^2+...+b_n^2} 
+	\end{align*}
+
+	
+
+
+\end{document}

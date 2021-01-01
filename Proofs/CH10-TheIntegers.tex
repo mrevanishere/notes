@@ -1,0 +1,75 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+%\usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{bm}
+\usepackage{empheq}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+
+%allowdisplaybreak
+\begin{document}
+\title{CH 10}
+\author{mrevanishere}
+\maketitle
+
+
+\section{Division}
+	Definition:\\
+	Let $ a, b\in\Z $. We say a divides b (or a is a factor of b) if 
+	$ b = ac $ for some integer c. When a divides b, we write $ a|b $ \\
+	Proposition 10.1 \\
+	Let a be a positive int. Then for any $ b\in\Z $ there are integers $ q,r $
+	such that
+	\begin{align*}
+		b=qa + r and 0 \le r < a
+	\end{align*}
+	q is quotient \\
+	r is remainder\\
+	Proposition 10.2 \\
+	Let $ a, b, d\inZ $ and suppose that $ d|a $ and $ d|b $. Then
+	$ d|(ma+nb) $for any $ m, n\in\Z $.
+\section{The Euclidean Algorithm} 
+	Definition:\\
+	Let $ a, b\in\Z $. A common factor of a and b is an int that divides both
+	a and b. The highest common factor of a and b, written
+	$ hcf(a, b) $ is the largest positive integer that divides both a and b.\\
+	Algorithm:\\
+	Let a, b be ints and let $ d = hcf(a, b) $.\\
+	Step 1: Divide a into b and get a quotient and remainder \\
+	... HELP \\
+	Last nz remainder is the HCF by checking. \\
+	General: divide a into b to get q1 and r1; then divide r1 into a,
+	getting a remainder r2 < r1; then divide r2 into r1... until 
+	rn++1 = 0. Then the rn is the hcf.\\
+	Theorem 10.1 \\
+	In the above, the highest common factor hcf(a, b) is equal to $ r_n $, 
+	the last nz remainder.\\
+	Proposition 10.4 \\
+	If $ a, b\in\Z $, then any common factor of a and b also divides 
+	$ hcf(a, b) $.\\
+	Definition: If $ a,b \in\Z $ and $ hcf(a, b) = 1 $, we say that a and b 
+	are coprime to each other. \\
+	Proposition 10.5: Let $ a, b\in\Z $ \\
+	(a) Suppose c is an int such that a, c are coprime to each other,
+	and $ c|ab. $. Then $ c|b $ \\
+	(b) Suppose p is a prime number and $ p|ab $. Then either $ p|a $ or
+	$ p|b $. \\
+	Proposition 10.6 \\
+	Let a1-n $ \in\Z $ and let p be a prime number. If $ p|a1-n $ then
+	$ p|a_i $ for some i.
+
+
+
+
+
+
+\end{document}

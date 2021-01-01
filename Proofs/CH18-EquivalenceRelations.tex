@@ -1,0 +1,52 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+%\usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{bm}
+\usepackage{empheq}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+
+%allowdisplaybreak
+\begin{document}
+\title{CH 18 Equivalence Relations}
+\author{mrevanishere}
+\maketitle
+
+\section{Relation}
+	RELATION: Let S be a set, a relation on S is: \\
+	Choose a subset R of the Cartesian product $ S \times S $, or
+	R consist of some of the ordered pairs $ (s, t), s, t \in S $. For those
+	ordered pairs $ (s, t) \in R $, we write $ s ~ t $ and say
+	s is related to t. $ (s, t ) \not\in R, s \nsim t $, is a relation on S \\
+	EQUIVALENCE RELATION: Let S be a set, and let ~ be a relation on S. Then
+	~ is an equivalence relation if for all $ a, b, c \in S $:
+	\begin{align*}
+		(i)& a ~ a \text{ this says ~ is reflexive } \\
+		(ii)& \text{ if } a ~ b \text{ then } b ~ a ( this says ~ is symmetric )\\
+		(iii)& \text{ if } a ~ b \text{ and } b ~ c \text{ then } a~c \text{ says ~ is transitive }
+	\end{align*}
+\section{Equivalence Classes}
+	Let S be a set and ~ an equivalence relation on S. For $ a \in S $, define
+	\begin{align*}
+		cl(a) &= \{ s|s \in S, s ~ a \}
+	\end{align*}
+	Thus, $ cl(a) $ is the set of things that are related to a. The subset
+	$ cl(a) $ is called an equivalence class of ~. The EC of ~ are the subsets
+	$ cl(a) $ as a ranges over the ele of S.
+\section{Prop 18.1}
+	Let S be a set and let ~ be an ER on S. Then the EC of ~ form a 
+	partition of S.
+
+
+
+
+\end{document}
