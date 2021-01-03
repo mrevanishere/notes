@@ -56,7 +56,7 @@ $ p(y) $ \\
 			\text{ Axiom 3: }& \text{If } A_{1-...} 
 			\text{ form a sequence of pairwise ME events in S } \\
 			(A_i \cap  A_j = \emptyset, if i \ne j) then \\
-			P(A_1 \cap A_2 \cap A_3 \cup ...) &j \sum^{\infty}_{i=1}P(A_i)
+			P(A_1 \cap A_2 \cap A_3 \cap ...) &j \sum^{\infty}_{i=1}P(A_i)
 		\end{align*}
 	Sample-Point Method (2.5)\\
 	1. \\
@@ -124,7 +124,7 @@ $ p(y) $ \\
 \section{Discrete}
 	Discrete - rv Y is discrete if can assume a countable number of distinct values \\
 	pd (Probability Distribution) - collection of probabilities \\
-	Probability Function for Y - $ p(y) $ \\
+	pf, pmf (Probability Function, pmf) for Y - $ p(y) $ \\
 	pd for drv Y that shows $ p(y) $ for all y. Must be: \\
 	1. $ 0 \le p(y) \le 1 $ for all y \\
 	2. $ \sum_y p(y) = 1 $, where summation is over all y with nonzero $ p(y) $.\\
@@ -153,12 +153,147 @@ $ p(y) $ \\
 		V(Y) = \sigma^2 = E[(Y-\mu)^2] =  E(Y^2) - \mu^2 \\
 	\end{align*}
 	\subsection{binomial pd}
-		...
+		Binomial Experiment: \\
+		1. consists of a fixed n identical trials \\
+		2. binary outcome S success, F failure \\
+		3. proba of S on a single trial is p and remains same from trial to trail.
+		The proba of F is $ q = 1 - p $ \\
+		4. The trials are independent \\
+		5. rv Y, the number of S during n trials. \\
+		pf of drv Y is a binomial pd based on n trials with sucess proba p iff
+		\begin{align*}
+			p(y) = \begin{pmatrix} n \\ y \end{pmatrix} 
+			p^y q^{n-y}, \text{    }, y = 0-n \text{ and } 0 \le p \le 1 \\
+		\end{align*}
+		see binomial theorem in proofs text \\
+		mean and variance of binomial drv (107):
+		\begin{align*}
+			\mu = E(Y) = np \text{ and } \sigma^2 = V(Y) = npq
+		\end{align*}
+		note: $ \sum p(y) = 1 $, $ E(Y^2-Y) = E(Y(Y-1)) $
 	\subsection{geometric pd}
+		Geometric Experiment:
+		same as Binomial except that it is the number of the trial which
+		the first success occurs \\
+		pdf of drv Y is said to have a geometric pd iff:
+		\begin{align*}
+			p(y) = q^{y-1}p \text{,   } y = 1-..., 0 \le p \le 1 \\
+		\end{align*}
+		mean and variance of geometric drv:
+		\begin{align*}
+			\mu = E(Y) = \frac{1}{p} \text{ and } \sigma^2 = V(Y) = \frac{1-p}{p^2} \\
+		\end{align*}
+	\subsection{Negative Binomial pd}
 		...
-
-
+	\subsection{(HELP)Hypergeometric pd}
+		??? $ b = N - r $, SS method, multiplication principle \\
+		pdf of drv Y has a hypergrometric pd iff:
+		\begin{align*}
+			p(y) = 
+			\frac{\begin{pmatrix} r \\ y \end{pmatrix}
+			\begin{pmatrix} N - r \\ n - y \end{pmatrix}}
+			{\begin{pmatrix} N \\ n \end{pmatrix}} \\
+		\end{align*}
+		where y is an int 0-n, subject to $ y \le r $ and 
+		$ n - y  \le N - r $. \\
+		fact: $ \sum_{i=0}^n \begin{pmatrix} r \\ i\end{pmatrix} $
+		$ \begin{pmatrix} N - r \\ n-i \end{pmatrix} = $
+		$ \begin{pmatrix} N \\ n \end{pmatrix} $ \\
+		mean and variance of hypergeometric drv (127):
+		\begin{align*}
+			\mu = E(Y) = \frac{nr}{N} \text{ and } 
+			\sigma^2 = V(Y) = n
+			\begin{pmatrix} r \\ N \end{pmatrix}
+			\begin{pmatrix} N-r \\ N \end{pmatrix}
+			\begin{pmatrix} N-n \\ N-1 \end{pmatrix} \\
+		\end{align*}
+		see 128 semi proof
+	\subsection{Poisson pd}
+		$ \lambda = np $ and take the limit of binomial pf to infinity (131)\\
+		pf of drv Y has a Poisson pd iff:
+		\begin{align*}
+			p(y) = \frac{\lambda^y}{y!}e^{-\lambda} \text{,   }
+			y=1-\lambda > 0
+		\end{align*}
+		mean and variance of Poisson drv (134)
+		\begin{align*}
+			\mu = E(Y) = \lambda \text{ and }
+			\sigma^2 = V(Y) = \lambda \\
+		\end{align*}
+		Poisson process: $ \lambda $ is mean num of occurrences per unit, then
+		Y = the number of occurences in a units has a Poisson pd with
+		mean $ a\lambda $. 
+	\subsection{Moments and mgf}
+		kth moment origin: kth moment of rv Y taken about origin is: $ E(Y^k) $
+		denoted as $ \mu'_k $ \\
+		kth moment mean: kth central moment of Y is $ E[Y-u]^k $
+		denoted as $ \mu_k $ where $ \sigma^2 = \mu_2 $ \\
+		mgf (moment-generating function): for rv Y is
+		$ m(t) = E(e^{tY}) $. mgf exists if there is a positive b such that
+		m(t) is finite for $ |t| \le b $ \\
+		T3.12 if m(t) exists, then for any pos int k
+		\begin{align*}
+			\frac{d^km(t)}{dt^k}|_{t=0} =
+			m^{(k)}(0) = \mu'_k
+		\end{align*}
+		...
+	\subsection{pgf}
+	\subsection{Tchebysheff}
 \section{Continuous}
+	df, cdf (cumulative distribution function): $ F(y) = P(Y \le y)$ for 
+	$ -\infty < y < \infty $\\
+	cdf for drv are always step functions. \\
+	cdf properties:
+	1. $ F(-\infty ) \equiv \lim_{y \to -\infty } F(y) = 0 $ \\
+	2. $ F(\infty) \equiv \lim_{y \to \infty} F(y) = 1 $ \\
+	3. $ F(y) $ is a nondecreasing function of y meaning for any 
+	$ y_1 < y_2 $, then $ F(y_1) \le F(y_2) $ \\
+	cdf for crv: if $ F(y) $ is continuous for $ -\infty < y < \infty $ \\
+	$ P(Y=y) = 0 $ and pf, pdf (probability density function) of crv is $ f(y) $:
+	\begin{align*}
+		f(\cdot)= f(y) = \frac{dF(y)}{dy} F'(y) \text{, when derivative exists}\\
+	\end{align*}
+	properties of pdf: (pdf doesn't have to be cont.)\\
+	1. $ f(y) \ge 0 $ for all y, $ -\infty < y < \infty $ \\
+	2. $ \int_{-\infty }^{\infty} f(y) dy = 1 $ \\
+	pth quantile: if $ 0 < p < 1 $, denoted by $ \phi_p $ is the smallest
+	$ P(Y \le \phi_q) = F(\phi_p) \ge p $. If Y is cont. $ \phi_p $ is the
+	smallest val such that $ F(\phi_p	 = P(Y \le \phi_p) = p) $ \\
+	$ \phi_p $ is also the 100pth percentile of Y. \\
+	$ \phi_{.5} $ is median (50th percentile / quantile) \\
+	probability on interval:
+	\begin{align*}
+		P(a\le Y \le b) &= \int_a^b f(y) dy \\
+	\end{align*}
+	ev of crv if integral exists:
+	\begin{align*}
+		E(Y) &= \int_{-\infty }^{\infty} y f(y) dy \\
+		E[g(Y)] &= \int_{-\infty }^{\infty} g(y) f(y) dy \\
+	\end{align*}
+	properties same: constant, closed under addition, and scalar multiplication 
+	\subsection{Uniform pd}
+	If $ \theta_1 < \theta_2 $, crv Y has a continuous uniform pd on 
+	$ (\theta_1, \theta_2) $ iff:
+	\begin{align*}
+		f(y) &= 
+		\begin{cases}
+			\frac{1}{\theta_2 - \theta_1}, \theta_1 \le y \le \theta_2, \\
+			0, \text{ elsewhere. } 
+		\end{cases}
+	\end{align*}
+	mean and variance for $ \theta_1 < \theta_2, (\theta_1, \theta_2) $ \\
+	\begin{align*}
+		\mu = E(Y) = \frac{\theta_1 + \theta_2}{2} \text{ and } 
+		\sigma^2 = V(Y) = \frac{(\theta_2 - \theta_1)^2}{12} \\ 
+	\end{align*}
+	\subsection{Normal pd}
+	\subsection{Gamma pd}
+	\subsection{Beta pd}
+	\subsection{Moments and mgf}
+	\subsection{Tchebysheff}
+	\subsection{Mixed pd}
+	
+
 \section{Multivariate}
 \section{Functions}
 \section{Sampling Distributions}
@@ -182,3 +317,5 @@ $ p(y) $ \\
 
 
 \end{document}
+
+
