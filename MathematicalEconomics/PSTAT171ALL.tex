@@ -1,0 +1,116 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+%\usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{bm}
+\usepackage{empheq}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+
+%allowdisplaybreak
+\begin{document}
+\title{Mathematical Interest Theory Study Guide}
+\author{mrevanishere}
+\maketitle
+
+Note many symbols here have a \$ after them but is omitted for simplicity 
+\section{Growth}
+	Interest: if an investment amount $ K $ grows to $ S $ then the difference is
+	$ S - K $ interest (non negative)\\
+	investment opportunities theory: (economic productivity of capital) borrows
+	then shares profit \\
+	Time preference theory: money now, rather than later \\
+	Excuse for interest: lender should be compensated for potential loss \\
+	principal: amount of money investor loans / is borrowed \\
+	Amount function: $ A_K(t), \{t|t \ge 0\} $ for principal $K $.
+	Where $ A_K(0) = K $\\
+	Accumulation function: for principal of \$1 $ a(t), A_1(t) $ are standard to write.
+	$ a(0) = 1 $\\
+	Typically $ A_K(t) = Ka(t) $ \\
+	amount of interest: if $ t_2 > t_1 \ge 0 $, then
+	$ A_K(t_2) - A_K(t_1) $ is the amount of interest if K between t12 \\
+	effective interest rate: for t1 to t2
+	\begin{align*}
+		i_{[t_1, t_2]} &= \frac{a(t_2) - a(t_1)}{a(t_1)} \\
+		i_{[t_1, t_2]} &= \frac{A_K(t_2) - A_K(t_1)}{A_K(t_1)} \\
+	\end{align*}
+	n-th time period: if n is pos int the interval $ [n-1, n] $ and 
+	$ i_n $ is $ i_{[n-1, n]} $
+	\begin{align*}
+		i_n &= \frac{a(n) - a(n-1)}{a(n-1)} \\
+		a(n) &= a(n-1)(1 + i_n) \\
+	\end{align*}
+	A fxn by simple interest rate s:
+	\begin{align*}
+		A_K(t) &=  K(1 + st) \\
+		a(t) &= 1 + st \\
+	\end{align*}
+	Simple interest rarely used for long duration loans since $ \{i_n\} $ converges
+	to 0 (book 16). \\
+	Exact Simple Interest (actual/actual): days of loan / days in year \\
+	Ordinary Simple Interest (30m/360):
+	\begin{align*}
+		d &= 360(y_2-y_1) + 30(m_2 - m_1) + (d_2 - d_1) \\
+	\end{align*}
+	Compound Interest (usual): $ i = i_1 = a(1) - 1 $ \\
+	if $ a(t) $ has period interest rates $ i_n = i $ , then for all 
+	non negative integers k (by induction)
+	\begin{align*}
+		a(k) &=  (1 + i)^k \\
+		a(t) &= (1 + i)^t \text{, } t \ge 0 \\
+	\end{align*}
+	$ a(s + t) = a(s)a(t) $ \\
+	floor function: math.floor() \\
+	Fiscal policy: government's decisions with spending and taxation. 
+	spending decreases rates, taxation increases rates \\
+	Monetary policy: regulation of money supply and interest rates by banks 
+	(Federal Reserve: Federal Funds Rate) \\
+	prime rate: rate that bank charges to it's best customers \\
+	Amount of discount: $ KD $ where $ D $ is the discount rate.
+	The borrower will have to pay $ KD $ to receive use of $ K $. \\
+	$ K - KD = (1-D)K $\\
+	effective discount rate on interval:
+	\begin{align*}
+		d_{{t_1, t_2}} &= \frac{a(t_2) - a(t_1)}{a(t_2)}  \\
+		d_{{t_1, t_2}} &= \frac{A_K(t_2) - A_K(t_1)}{A_K(t_2)} \\
+	\end{align*}
+	d for nth time period:
+	\begin{align*}
+		d_n &= \frac{a(n) - a(n-1)}{a(n)}  \\
+		a(n-1) &= a(n)(1-d_n) \\
+	\end{align*}	
+	i and D are equivalent for $ [t_1, t_2] $ if for each \$1 invested
+	at $ t_1 $, wo rates produce the same accumulated value at $ t_2 $ or have
+	the same accumulation function. \\
+	i and D equivalent iff: if L is loan amount and i interest rate:
+	\begin{align*}
+		L &=  L(1+i_{[t_1, t_2]})(1 - d_{[t_1, t_2]}) \\
+		1 &= (1 + i_{[t_1, t_2]})(1 - d_{[t_1, t_2]}) \\
+	\end{align*}
+	so:
+	\begin{align*}
+		i_{[t_1, t_2]} &= \frac{d_{[t_1, t_2]}}{1 - d_{[t_1, t_2]}}  \\
+		d_{[t_1, t_2]} &= \frac{i_{[t_1, t_2]}}{1 + i_{[t_1, t_2]}}  \\
+		(1 + i_n)(1 - d_n) &=  1 \\
+		i_n &= \frac{d_n}{1 - d_n}  \\
+	\end{align*}
+	Discount Function: $ v(t) = \frac{1}{a(t)} $ 
+	where $ v(t_0) $ is the money you must invest at t=0 to have $ 1 $ after
+	$ t_0 $ years \\
+	invest at $ t_1 $ to have S at $ t_2 $ then 
+	$ Sv(t_2)a(t_1) = S \frac{a(t_1)}{a(t_2)} = S \frac{v(t_2)}{v(t_1)}   $ \\
+	discount factor: $ v = \frac{1}{1 + i} $ \\
+	...
+
+
+
+
+\end{document}
